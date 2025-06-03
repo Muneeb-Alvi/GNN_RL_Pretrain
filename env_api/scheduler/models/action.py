@@ -24,6 +24,7 @@ class Action:
         self.execution_code_str = ""
 
         self.comps_schedule = {}
+        self.str_repr = ""
     
     def set_comps(self, comps):
         self.comps = comps
@@ -68,6 +69,7 @@ class Reversal(AffineAction):
             optim_str += f"\n\t{comp}.loop_reversal({loop_level});"
 
         self.legality_code_str = self.execution_code_str = optim_str
+        self.str_repr = f"R(L{loop_level},comps={comps})"
 
 
 class Interchange(AffineAction):
@@ -83,6 +85,7 @@ class Interchange(AffineAction):
             optim_str += f"\n\t{comp}.interchange({loop_level1}, {loop_level2});"
 
         self.legality_code_str = self.execution_code_str = optim_str
+        self.str_repr = f"I(L{loop_level1},L{loop_level2},comps={comps})"
 
 
 class Skewing(AffineAction):
@@ -102,6 +105,9 @@ class Skewing(AffineAction):
             optim_str += f"\n\t{comp}.skew({loop_level1}, {loop_level2}, {factor1}, {factor2});"
         
         self.legality_code_str = self.execution_code_str = optim_str
+        self.str_repr = (
+            f"S(L{loop_level1},L{loop_level2},{factor1},{factor2},comps={self.comps})"
+        )
 
 class Parallelization(Action):
     def __init__(self, params: list, env_id: int = None, worker_id=""):
@@ -126,6 +132,7 @@ class Parallelization(Action):
         {self.execution_code_str}
         """
         )
+        self.str_repr = f"P(L{loop_level},comps={comps})"
         
 
 
@@ -150,6 +157,7 @@ class Unrolling(Action):
         {self.execution_code_str}
         """
         )
+        self.str_repr = f"U(L{loop_level},{factor},comps={comps})"
 
     def set_params(self, additional_loops):
         loop_level , factor = self.params
@@ -189,6 +197,7 @@ class Tiling(Action):
             optim_str += f"\n\t{comp}.tile({','.join([str(p) for p in self.params])});"
 
         self.execution_code_str = self.legality_code_str = optim_str
+        self.str_repr = f"T{size}({loop_args}{factor_args},comps={comps})"
 
     def apply_on_branches(self, branches, schedule_list: List[Action]):
         tiling_depth = len(self.params)//2
