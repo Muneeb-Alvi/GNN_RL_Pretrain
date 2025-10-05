@@ -1,0 +1,101 @@
+_wandb:
+    value:
+        cli_version: 0.21.3
+        e:
+            lcktt0o17qca3e3kjdi5ga7h5w9k8bo2:
+                args:
+                    - model.name=SimpleGraphSAGE
+                    - model.input_size=17
+                    - experiment.name=SimpleGraphSAGE_fixed_no_log_transform
+                    - training.lr=0.001
+                    - training.max_epochs=500
+                    - training.training_gpu=cuda:0
+                    - training.validation_gpu=cuda:0
+                    - data_generation.batch_size=512
+                    - data_generation.just_load_pickled=true
+                    - wandb.use_wandb=true
+                codePath: train_model_gnn.py
+                cpu_count: 128
+                cpu_count_logical: 128
+                cudaVersion: "12.2"
+                disk:
+                    /:
+                        total: "10737418240"
+                        used: "5459337216"
+                email: maa9509@nyu.edu
+                executable: /home/maa9509/.conda/envs/rl_pretrain/bin/python
+                git:
+                    commit: 7f28bb5aa1e3fa66fac59142efe45bf266427661
+                    remote: https://github.com/Muneeb-Alvi/GNN_RL_Pretrain.git
+                gpu: NVIDIA A100 80GB PCIe
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100 80GB PCIe
+                      uuid: GPU-bf1de44b-0f8b-74a7-ec4f-cc02aa20d864
+                host: cn012
+                memory:
+                    total: "539903234048"
+                os: Linux-4.18.0-513.5.1.el8_9.x86_64-x86_64-with-glibc2.28
+                program: /scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py
+                python: CPython 3.10.18
+                root: /scratch/maa9509/GNN_RL_Pretrain/outputs/2025-10-05/20-17-44
+                slurm:
+                    cluster_name: hpc
+                    conf: /opt/slurm/etc/slurm.conf
+                    cpus_on_node: "10"
+                    cpus_per_task: "10"
+                    gtids: "0"
+                    job_account: students
+                    job_cpus_per_node: "10"
+                    job_gid: "100"
+                    job_gpus: "0"
+                    job_id: "12227642"
+                    job_name: mape_job_simple_sage.sh
+                    job_nodelist: cn012
+                    job_num_nodes: "1"
+                    job_partition: nvidia
+                    job_qos: nvidias
+                    job_uid: "3854509"
+                    job_user: maa9509
+                    jobid: "12227642"
+                    localid: "0"
+                    mem_per_node: "131072"
+                    nnodes: "1"
+                    node_aliases: (null)
+                    nodeid: "0"
+                    nodelist: cn012
+                    prio_process: "0"
+                    procid: "0"
+                    submit_dir: /scratch/maa9509/GNN_RL_Pretrain
+                    submit_host: dn213
+                    task_pid: "1469135"
+                    tasks_per_node: "1"
+                    topology_addr: cn-spine.leaf03.cn012
+                    topology_addr_pattern: switch.switch.node
+                    working_cluster: hpc:slurm:6816:9216:109
+                startedAt: "2025-10-05T16:17:44.831264Z"
+                writerId: lcktt0o17qca3e3kjdi5ga7h5w9k8bo2
+        m: []
+        python_version: 3.10.18
+        t:
+            "1":
+                - 1
+                - 5
+                - 50
+                - 53
+                - 77
+            "2":
+                - 1
+                - 5
+                - 50
+                - 53
+                - 77
+            "3":
+                - 13
+            "4": 3.10.18
+            "5": 0.21.3
+            "12": 0.21.3
+            "13": linux-x86_64

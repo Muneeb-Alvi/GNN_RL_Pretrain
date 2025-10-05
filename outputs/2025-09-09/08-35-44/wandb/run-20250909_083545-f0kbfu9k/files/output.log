@@ -1,0 +1,17 @@
+[INFO] Loading all .pt files directly from folder...
+/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/data_utils.py:293: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  torch.load(pt_file)  # Validate load
+[INFO] Generating new GNN pickled data...
+[INFO] Loading all .pt files directly from folder...
+[INFO] Generating new GNN pickled data...
+/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/data_utils.py:369: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(data_path)
+train Epoch 1: 100%|██████████| 236/236 [03:07<00:00,  1.26it/s, loss=129]   
+val Epoch 1: 100%|██████████| 79/79 [00:57<00:00,  1.37it/s, loss=3.3e+3] 
+Epoch 1/2 => Train Loss: 645.3414, Val Loss: 198.3707, Best: 198.3707, Time: 245.84s
+train Epoch 2: 100%|██████████| 236/236 [03:09<00:00,  1.25it/s, loss=172]
+val Epoch 2: 100%|██████████| 79/79 [00:57<00:00,  1.37it/s, loss=812]
+Epoch 2/2 => Train Loss: 242.2675, Val Loss: 147.2647, Best: 147.2647, Time: 246.85s
+Training complete in 11m 48s, best val loss: 147.2647

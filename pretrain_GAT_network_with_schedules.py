@@ -6,7 +6,7 @@ import torch.optim as optim
 import numpy as np
 from torch_geometric.data import Data, Batch
 import time
-import ray
+
 import mlflow
 import argparse as arg
 import json
@@ -18,20 +18,19 @@ import torch.nn as nn
 from torch_geometric.data import Batch, Data
 import matplotlib.pyplot as plt
 from pretrain.embedding import get_embedding_size
-from pretrain.lstm_autoencoder_modeling import encoder
+# from pretrain.lstm_autoencoder_modeling import encoder
 
 
-from agent.rollout_worker import RolloutWorker, Transition, apply_flattened_action
-from utils.dataset_actor.dataset_actor import DatasetActor
+# from agent.rollout_worker import RolloutWorker, Transition, apply_flattened_action
+# from utils.dataset_actor.dataset_actor import DatasetActor
 
-import ray
 import torch
 import torch.nn as nn
 import math
 from torch_geometric.data import Data
 from agent.graph_utils import *
 from config.config import Config
-from env_api.tiramisu_api import TiramisuEnvAPI
+# from env_api.tiramisu_api import TiramisuEnvAPI
 from tqdm import tqdm
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -48,6 +47,12 @@ import torch
 from torch_geometric.data import Data, Batch
 import pandas as pd
 
+try:
+    import ray
+except ImportError:
+    ray = None
+
+from agent.policy_value_nn import GAT
 
 def get_action_number(transformation: str) -> Optional[int]:
     """Convert a transformation string to its corresponding action number"""
@@ -155,10 +160,14 @@ def parse_schedule_to_action_list(schedule_str: str) -> List[int]:
     return action_list
 class PretrainDataset:
     def __init__(self, dataset_worker, config, save_path="pretrain_dataset_12.5k_fixed_duplicates.pkl"):
-        self.dataset_worker = dataset_worker
+        # self.dataset_worker = dataset_worker
         self.data = {}  # Initialize as a dictionary
         self.current_program = None
-        self.tiramisu_api = TiramisuEnvAPI(local_dataset=True)
+        self.save_path = save_path
+        if not os.path.exists(self.save_path):
+            from env_api.tiramisu_api import TiramisuEnvAPI
+            self.tiramisu_api = TiramisuEnvAPI(local_dataset=True)
+            self.dataset_worker = dataset_worker
         Config.config = config
         self.save_path = save_path
         self.y_mean = None
@@ -887,7 +896,7 @@ if "__main__" == __name__:
     weight_decay = Config.config.hyperparameters.weight_decay
     tag = "12.5k"
     Config.config.dataset.tags = [tag]
-    dataset_worker = DatasetActor.remote(Config.config.dataset)
+    # dataset_worker = DatasetActor.remote(Config.config.dataset)
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     print(f"TRAINING DEVICE: {device}")
     # Initialize GAT model
@@ -895,7 +904,7 @@ if "__main__" == __name__:
         input_size = 6 + get_embedding_size(Config.config.pretrain.embedding_type) + 9
     else:
         input_size = 718
-    model = GAT_SCALED(input_size=input_size, hidden_size=128, num_heads=4, num_outputs=56).to(device)
+    model = GAT(input_size=input_size, hidden_size=128, num_heads=4, num_outputs=56).to(device)
 
     # Pretrain the model
     run_name = args.name
@@ -921,7 +930,7 @@ if "__main__" == __name__:
                 "entropy_coeff_finish": entropy_coeff_finish,
             }
         )
-        pretrain_model(model, dataset_worker, device, Config.config, num_epochs=3000, batch_size=512, lr=lr)
+        pretrain_model(model, None, device, Config.config, num_epochs=2, batch_size=512, lr=lr)
     
         # Log final model after training
         mlflow.pytorch.log_model(model, "final_gat_model1")

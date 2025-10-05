@@ -1,0 +1,15 @@
+/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+Baseline MAPE (const=1.0): Train=46.93%, Val=46.40%
+train Epoch 1: 100%|██████████| 2133/2133 [01:05<00:00, 32.80it/s, Loss=94.6606, SMAPE=92.57%, MAPE_safe=74.82%] 
+val Epoch 1: 100%|██████████| 478/478 [00:11<00:00, 41.64it/s, Loss=86.9116, SMAPE=84.95%, MAPE_safe=65.45%]
+[INFO] New best model saved with val_loss: 95.2441
+Error executing job with overrides: ['model.name=SimpleGraphSAGE', 'model.input_size=17', 'experiment.name=SimpleGraphSAGE_1M_dataset', 'training.lr=0.001', 'training.max_epochs=500', 'training.training_gpu=cuda:0', 'training.validation_gpu=cuda:0', 'data_generation.batch_size=512', 'data_generation.just_load_pickled=true', 'wandb.use_wandb=true']
+Traceback (most recent call last):
+  File "/scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py", line 127, in main
+    best_loss, best_model_state = train_gnn_model(
+  File "/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/train_utils.py", line 214, in train_gnn_model
+    f"SMAPE (T/V): {train_smape:.2f}/{val_smape:.2f}, MAPE_safe (T/V): {train_mape_safe:.2f}/{val_mape_safe:.2f}, Best MAPE_safe: {best_mape_safe:.2f}%, Time: {epoch_time:.2f}s"
+UnboundLocalError: local variable 'best_mape_safe' referenced before assignment
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

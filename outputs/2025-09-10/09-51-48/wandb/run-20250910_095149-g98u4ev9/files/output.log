@@ -1,0 +1,19 @@
+[INFO] Loading all .pt files directly from folder...
+/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/data_utils.py:293: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  torch.load(pt_file)  # Validate load
+[INFO] Generating new GNN pickled data...
+Error executing job with overrides: ['model.name=DeepGraphSAGE', 'experiment.name=deep_sage_experiment', 'training.training_gpu=cuda:0', 'training.validation_gpu=cuda:0']
+Traceback (most recent call last):
+  File "/scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py", line 55, in main
+    gnn_dataset_train = GNNDatasetParallel(
+  File "/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/data_utils.py", line 315, in __init__
+    shutil.rmtree(pkl_output_folder)
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/shutil.py", line 725, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/shutil.py", line 681, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/shutil.py", line 679, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+FileNotFoundError: [Errno 2] No such file or directory: 'function730249_196.pt'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

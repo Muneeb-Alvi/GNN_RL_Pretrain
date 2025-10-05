@@ -1,0 +1,1912 @@
+[INFO] Loading all .pt files directly from folder (ignoring .pkl metadata)...
+/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/data_utils.py:391: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _ = torch.load(pt_file)  # Optional: validate loading
+[INFO] Loading all .pt files directly from folder (ignoring .pkl metadata)...
+/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/data_utils.py:480: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(data_path)
+[Baseline] Val MAPE if pred==1.0: 2025.6106%
+train Epoch 1: 100%|██████████| 158/158 [00:55<00:00,  2.82it/s, loss=1.06]
+[Diag][train] y(mean/min/max)=(3.4487/0.0010/63.7219) out(mean/min/max)=(-0.6867/-2.0839/0.6016)
+[Diag][train] y(mean/min/max)=(3.8719/0.0010/118.5553) out(mean/min/max)=(1.3424/-0.5729/2.6090)
+[Diag][train] y(mean/min/max)=(3.1733/0.0010/90.4405) out(mean/min/max)=(2.5210/0.7382/3.7320)
+[Diag][train] y(mean/min/max)=(3.2468/0.0010/51.4464) out(mean/min/max)=(1.8203/0.4588/2.8150)
+[Diag][train] y(mean/min/max)=(3.2580/0.0009/76.4747) out(mean/min/max)=(0.9039/-0.3132/1.9540)
+[Diag][train] y(mean/min/max)=(2.9397/0.0006/43.2635) out(mean/min/max)=(0.9469/-0.0829/1.9738)
+val Epoch 1: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.604]
+[Diag][val] y(mean/min/max)=(1.3513/0.0001/15.8172) out(mean/min/max)=(1.1650/0.5617/4.8871)
+[Diag][val] y(mean/min/max)=(5.8797/0.3187/29.5377) out(mean/min/max)=(1.9402/0.4606/3.3829)
+[Diag][val] y(mean/min/max)=(0.9740/0.0242/2.4155) out(mean/min/max)=(1.1269/0.4994/1.7248)
+[Diag][val] y(mean/min/max)=(0.8828/0.0050/1.8947) out(mean/min/max)=(1.1799/0.4561/1.9676)
+[Diag][val] y(mean/min/max)=(0.9207/0.0003/3.8595) out(mean/min/max)=(1.1546/0.4853/2.2821)
+[Diag][val] y(mean/min/max)=(1.0427/0.0019/3.8367) out(mean/min/max)=(1.1920/0.4853/1.8463)
+[INFO] New best model saved with val_loss: 1.123665
+Epoch 1/500 => Train Loss: 1.4813, Val Loss: 1.1237, Best: 1.1237, SMAPE (T/V): 77.71/67.29, MAPE_safe (T/V): 60.11/77.66, Time: 73.89s
+train Epoch 2: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.59] 
+val Epoch 2: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.0962]
+[INFO] New best model saved with val_loss: 1.006457
+Epoch 2/500 => Train Loss: 1.1844, Val Loss: 1.0065, Best: 1.0065, SMAPE (T/V): 72.46/67.20, MAPE_safe (T/V): 60.20/61.24, Time: 72.73s
+train Epoch 3: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.23] 
+val Epoch 3: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.117]
+[INFO] New best model saved with val_loss: 0.998950
+Epoch 3/500 => Train Loss: 1.1604, Val Loss: 0.9989, Best: 0.9989, SMAPE (T/V): 72.34/65.59, MAPE_safe (T/V): 60.28/62.33, Time: 73.12s
+train Epoch 4: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.554]
+val Epoch 4: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.141]
+Epoch 4/500 => Train Loss: 1.1252, Val Loss: 1.0094, Best: 0.9989, SMAPE (T/V): 71.26/67.33, MAPE_safe (T/V): 59.01/61.85, Time: 72.75s
+train Epoch 5: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=2.15] 
+val Epoch 5: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.0728]
+Epoch 5/500 => Train Loss: 1.1035, Val Loss: 1.0081, Best: 0.9989, SMAPE (T/V): 70.80/68.04, MAPE_safe (T/V): 58.84/62.59, Time: 72.62s
+train Epoch 6: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.989]
+val Epoch 6: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.291]
+Epoch 6/500 => Train Loss: 1.1198, Val Loss: 1.0071, Best: 0.9989, SMAPE (T/V): 71.26/67.13, MAPE_safe (T/V): 59.15/65.04, Time: 72.77s
+train Epoch 7: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.769]
+val Epoch 7: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.131]
+[INFO] New best model saved with val_loss: 0.992849
+Epoch 7/500 => Train Loss: 1.0957, Val Loss: 0.9928, Best: 0.9928, SMAPE (T/V): 70.75/66.47, MAPE_safe (T/V): 59.07/60.85, Time: 72.56s
+train Epoch 8: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.24] 
+val Epoch 8: 100%|██████████| 53/53 [00:16<00:00,  3.12it/s, loss=0.134]
+Epoch 8/500 => Train Loss: 1.0737, Val Loss: 1.0036, Best: 0.9928, SMAPE (T/V): 70.02/67.14, MAPE_safe (T/V): 57.94/57.46, Time: 72.18s
+train Epoch 9: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.827]
+val Epoch 9: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.167]
+Epoch 9/500 => Train Loss: 1.0512, Val Loss: 1.0068, Best: 0.9928, SMAPE (T/V): 69.50/68.09, MAPE_safe (T/V): 57.20/62.47, Time: 72.52s
+train Epoch 10: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.35] 
+val Epoch 10: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.325]
+Epoch 10/500 => Train Loss: 1.0532, Val Loss: 1.0716, Best: 0.9928, SMAPE (T/V): 69.45/71.79, MAPE_safe (T/V): 56.93/59.69, Time: 72.66s
+train Epoch 11: 100%|██████████| 158/158 [00:56<00:00,  2.80it/s, loss=0.638]
+val Epoch 11: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.0979]
+Epoch 11/500 => Train Loss: 1.0848, Val Loss: 1.0187, Best: 0.9928, SMAPE (T/V): 70.47/67.52, MAPE_safe (T/V): 58.32/69.19, Time: 73.86s
+train Epoch 12: 100%|██████████| 158/158 [00:56<00:00,  2.79it/s, loss=0.883]
+val Epoch 12: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.255]
+Epoch 12/500 => Train Loss: 1.0663, Val Loss: 1.0341, Best: 0.9928, SMAPE (T/V): 69.87/68.13, MAPE_safe (T/V): 58.12/65.41, Time: 74.05s
+train Epoch 13: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.09] 
+val Epoch 13: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.123]
+Epoch 13/500 => Train Loss: 1.0510, Val Loss: 1.0162, Best: 0.9928, SMAPE (T/V): 69.48/68.22, MAPE_safe (T/V): 57.53/58.07, Time: 73.32s
+train Epoch 14: 100%|██████████| 158/158 [00:56<00:00,  2.82it/s, loss=1.13] 
+val Epoch 14: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.274]
+Epoch 14/500 => Train Loss: 1.0463, Val Loss: 1.0191, Best: 0.9928, SMAPE (T/V): 69.38/67.68, MAPE_safe (T/V): 57.12/70.95, Time: 73.40s
+train Epoch 15: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.876]
+val Epoch 15: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.276]
+Epoch 15/500 => Train Loss: 1.0360, Val Loss: 0.9968, Best: 0.9928, SMAPE (T/V): 68.98/67.20, MAPE_safe (T/V): 57.41/62.06, Time: 72.98s
+train Epoch 16: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.471]
+val Epoch 16: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.213]
+Epoch 16/500 => Train Loss: 1.0263, Val Loss: 0.9975, Best: 0.9928, SMAPE (T/V): 68.92/67.08, MAPE_safe (T/V): 56.67/63.94, Time: 72.95s
+train Epoch 17: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.869]
+val Epoch 17: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.362]
+[INFO] New best model saved with val_loss: 0.978083
+Epoch 17/500 => Train Loss: 1.0211, Val Loss: 0.9781, Best: 0.9781, SMAPE (T/V): 68.48/66.63, MAPE_safe (T/V): 56.36/62.71, Time: 72.25s
+train Epoch 18: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.54] 
+val Epoch 18: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.369]
+Epoch 18/500 => Train Loss: 1.0151, Val Loss: 0.9891, Best: 0.9781, SMAPE (T/V): 68.54/67.79, MAPE_safe (T/V): 56.58/63.37, Time: 72.26s
+train Epoch 19: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=2.07] 
+val Epoch 19: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.262]
+Epoch 19/500 => Train Loss: 1.0139, Val Loss: 0.9856, Best: 0.9781, SMAPE (T/V): 68.38/67.43, MAPE_safe (T/V): 56.46/61.31, Time: 72.65s
+train Epoch 20: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.03] 
+val Epoch 20: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.141]
+Epoch 20/500 => Train Loss: 1.0107, Val Loss: 0.9977, Best: 0.9781, SMAPE (T/V): 68.31/67.90, MAPE_safe (T/V): 56.09/57.48, Time: 72.60s
+train Epoch 21: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.814]
+val Epoch 21: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.0981]
+Epoch 21/500 => Train Loss: 1.0502, Val Loss: 1.0300, Best: 0.9781, SMAPE (T/V): 69.36/69.75, MAPE_safe (T/V): 57.12/59.74, Time: 72.12s
+train Epoch 22: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.03] 
+val Epoch 22: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.128]
+Epoch 22/500 => Train Loss: 1.0349, Val Loss: 1.0097, Best: 0.9781, SMAPE (T/V): 68.89/68.90, MAPE_safe (T/V): 56.79/59.06, Time: 72.42s
+train Epoch 23: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.18] 
+val Epoch 23: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.712]
+Epoch 23/500 => Train Loss: 1.0314, Val Loss: 0.9938, Best: 0.9781, SMAPE (T/V): 68.87/66.85, MAPE_safe (T/V): 56.38/65.14, Time: 73.21s
+train Epoch 24: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.78] 
+val Epoch 24: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.436]
+Epoch 24/500 => Train Loss: 1.0277, Val Loss: 0.9808, Best: 0.9781, SMAPE (T/V): 68.71/67.27, MAPE_safe (T/V): 56.66/62.03, Time: 72.81s
+train Epoch 25: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.46] 
+val Epoch 25: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.35] 
+Epoch 25/500 => Train Loss: 1.0256, Val Loss: 0.9972, Best: 0.9781, SMAPE (T/V): 68.63/67.92, MAPE_safe (T/V): 56.46/60.47, Time: 73.35s
+train Epoch 26: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.886]
+val Epoch 26: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.11] 
+Epoch 26/500 => Train Loss: 1.0226, Val Loss: 1.0168, Best: 0.9781, SMAPE (T/V): 68.62/68.33, MAPE_safe (T/V): 56.29/58.80, Time: 71.71s
+train Epoch 27: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=2.2]  
+val Epoch 27: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.159]
+Epoch 27/500 => Train Loss: 1.0197, Val Loss: 0.9956, Best: 0.9781, SMAPE (T/V): 68.52/67.23, MAPE_safe (T/V): 56.46/60.82, Time: 73.02s
+train Epoch 28: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.512]
+val Epoch 28: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.0941]
+Epoch 28/500 => Train Loss: 1.0170, Val Loss: 0.9975, Best: 0.9781, SMAPE (T/V): 68.19/67.81, MAPE_safe (T/V): 55.82/61.91, Time: 72.30s
+train Epoch 29: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.796]
+val Epoch 29: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.313]
+Epoch 29/500 => Train Loss: 1.0147, Val Loss: 0.9905, Best: 0.9781, SMAPE (T/V): 68.22/68.42, MAPE_safe (T/V): 55.83/60.97, Time: 71.82s
+train Epoch 30: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.723]
+val Epoch 30: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.112]
+Epoch 30/500 => Train Loss: 1.0081, Val Loss: 1.0071, Best: 0.9781, SMAPE (T/V): 68.06/67.73, MAPE_safe (T/V): 55.56/62.64, Time: 72.41s
+train Epoch 31: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.855]
+val Epoch 31: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.352]
+Epoch 31/500 => Train Loss: 1.0098, Val Loss: 0.9978, Best: 0.9781, SMAPE (T/V): 67.88/67.47, MAPE_safe (T/V): 55.42/63.93, Time: 72.18s
+train Epoch 32: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.457]
+val Epoch 32: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.414]
+Epoch 32/500 => Train Loss: 1.0045, Val Loss: 0.9908, Best: 0.9781, SMAPE (T/V): 67.67/67.82, MAPE_safe (T/V): 55.31/62.22, Time: 72.53s
+train Epoch 33: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.39] 
+val Epoch 33: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.299]
+Epoch 33/500 => Train Loss: 1.0027, Val Loss: 0.9982, Best: 0.9781, SMAPE (T/V): 67.74/67.77, MAPE_safe (T/V): 55.52/63.90, Time: 72.78s
+train Epoch 34: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.32] 
+val Epoch 34: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.161]
+Epoch 34/500 => Train Loss: 1.0016, Val Loss: 0.9960, Best: 0.9781, SMAPE (T/V): 67.74/67.74, MAPE_safe (T/V): 55.38/59.86, Time: 72.41s
+train Epoch 35: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.628]
+val Epoch 35: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.321]
+Epoch 35/500 => Train Loss: 1.0001, Val Loss: 0.9894, Best: 0.9781, SMAPE (T/V): 67.72/67.85, MAPE_safe (T/V): 55.34/62.98, Time: 73.04s
+train Epoch 36: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.4]  
+val Epoch 36: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.312]
+Epoch 36/500 => Train Loss: 0.9975, Val Loss: 0.9824, Best: 0.9781, SMAPE (T/V): 67.74/67.48, MAPE_safe (T/V): 55.48/62.71, Time: 72.16s
+train Epoch 37: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.32] 
+val Epoch 37: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.24] 
+Epoch 37/500 => Train Loss: 0.9962, Val Loss: 0.9904, Best: 0.9781, SMAPE (T/V): 67.62/67.42, MAPE_safe (T/V): 55.05/63.62, Time: 72.07s
+train Epoch 38: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.14] 
+val Epoch 38: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.241]
+Epoch 38/500 => Train Loss: 0.9956, Val Loss: 0.9911, Best: 0.9781, SMAPE (T/V): 67.61/67.74, MAPE_safe (T/V): 55.64/62.20, Time: 72.13s
+train Epoch 39: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.05] 
+val Epoch 39: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.244]
+Epoch 39/500 => Train Loss: 0.9942, Val Loss: 0.9891, Best: 0.9781, SMAPE (T/V): 67.47/67.65, MAPE_safe (T/V): 55.22/61.90, Time: 72.26s
+train Epoch 40: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.02] 
+val Epoch 40: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.254]
+Epoch 40/500 => Train Loss: 0.9930, Val Loss: 0.9888, Best: 0.9781, SMAPE (T/V): 67.48/67.72, MAPE_safe (T/V): 55.11/62.07, Time: 72.72s
+train Epoch 41: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.639]
+val Epoch 41: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.278]
+Epoch 41/500 => Train Loss: 1.0175, Val Loss: 0.9915, Best: 0.9781, SMAPE (T/V): 68.30/67.69, MAPE_safe (T/V): 55.97/63.44, Time: 72.18s
+train Epoch 42: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.81] 
+val Epoch 42: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.196]
+Epoch 42/500 => Train Loss: 1.0243, Val Loss: 1.0302, Best: 0.9781, SMAPE (T/V): 68.27/68.75, MAPE_safe (T/V): 56.06/56.63, Time: 72.92s
+train Epoch 43: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=3.07] 
+val Epoch 43: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.332]
+Epoch 43/500 => Train Loss: 1.0187, Val Loss: 0.9924, Best: 0.9781, SMAPE (T/V): 68.18/68.36, MAPE_safe (T/V): 55.58/61.03, Time: 72.06s
+train Epoch 44: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.715]
+val Epoch 44: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.367]
+Epoch 44/500 => Train Loss: 1.0170, Val Loss: 1.0093, Best: 0.9781, SMAPE (T/V): 68.26/66.99, MAPE_safe (T/V): 55.71/60.10, Time: 72.00s
+train Epoch 45: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.911]
+val Epoch 45: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.316]
+Epoch 45/500 => Train Loss: 1.0146, Val Loss: 0.9819, Best: 0.9781, SMAPE (T/V): 68.26/66.57, MAPE_safe (T/V): 56.09/61.10, Time: 72.30s
+train Epoch 46: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.6]  
+val Epoch 46: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.29] 
+Epoch 46/500 => Train Loss: 1.0128, Val Loss: 0.9811, Best: 0.9781, SMAPE (T/V): 67.97/66.97, MAPE_safe (T/V): 55.47/61.50, Time: 72.38s
+train Epoch 47: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.06] 
+val Epoch 47: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.206]
+Epoch 47/500 => Train Loss: 1.0085, Val Loss: 0.9894, Best: 0.9781, SMAPE (T/V): 67.91/67.60, MAPE_safe (T/V): 55.38/59.71, Time: 72.38s
+train Epoch 48: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.2]  
+val Epoch 48: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.274]
+Epoch 48/500 => Train Loss: 1.0089, Val Loss: 0.9932, Best: 0.9781, SMAPE (T/V): 68.16/67.39, MAPE_safe (T/V): 55.57/61.68, Time: 72.21s
+train Epoch 49: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.394]
+val Epoch 49: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.233]
+Epoch 49/500 => Train Loss: 1.0082, Val Loss: 1.0093, Best: 0.9781, SMAPE (T/V): 67.84/68.32, MAPE_safe (T/V): 55.56/62.87, Time: 72.47s
+train Epoch 50: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.07] 
+val Epoch 50: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.244]
+Epoch 50/500 => Train Loss: 1.0078, Val Loss: 0.9883, Best: 0.9781, SMAPE (T/V): 67.98/67.98, MAPE_safe (T/V): 55.61/61.96, Time: 72.16s
+train Epoch 51: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.571]
+val Epoch 51: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.218]
+Epoch 51/500 => Train Loss: 1.0039, Val Loss: 0.9863, Best: 0.9781, SMAPE (T/V): 67.98/66.60, MAPE_safe (T/V): 55.53/59.76, Time: 72.78s
+train Epoch 52: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.519]
+val Epoch 52: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.405]
+Epoch 52/500 => Train Loss: 1.0037, Val Loss: 0.9974, Best: 0.9781, SMAPE (T/V): 67.87/67.59, MAPE_safe (T/V): 55.47/65.99, Time: 72.10s
+train Epoch 53: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.198]
+val Epoch 53: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.203]
+Epoch 53/500 => Train Loss: 1.0050, Val Loss: 1.0048, Best: 0.9781, SMAPE (T/V): 67.99/68.04, MAPE_safe (T/V): 55.74/62.31, Time: 72.12s
+train Epoch 54: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.787]
+val Epoch 54: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.205]
+Epoch 54/500 => Train Loss: 1.0017, Val Loss: 1.0045, Best: 0.9781, SMAPE (T/V): 67.85/67.73, MAPE_safe (T/V): 55.49/64.83, Time: 71.78s
+train Epoch 55: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.723]
+val Epoch 55: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.212]
+Epoch 55/500 => Train Loss: 1.0017, Val Loss: 1.0059, Best: 0.9781, SMAPE (T/V): 67.76/67.85, MAPE_safe (T/V): 55.56/60.23, Time: 71.65s
+train Epoch 56: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.86] 
+val Epoch 56: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.173]
+Epoch 56/500 => Train Loss: 1.0004, Val Loss: 1.0057, Best: 0.9781, SMAPE (T/V): 67.88/67.65, MAPE_safe (T/V): 55.73/63.09, Time: 72.59s
+train Epoch 57: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.34] 
+val Epoch 57: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.224]
+Epoch 57/500 => Train Loss: 0.9984, Val Loss: 0.9864, Best: 0.9781, SMAPE (T/V): 67.82/67.41, MAPE_safe (T/V): 55.73/61.18, Time: 72.04s
+train Epoch 58: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.17] 
+val Epoch 58: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.251]
+Epoch 58/500 => Train Loss: 0.9969, Val Loss: 1.0054, Best: 0.9781, SMAPE (T/V): 67.68/68.55, MAPE_safe (T/V): 55.43/62.92, Time: 71.83s
+train Epoch 59: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.971]
+val Epoch 59: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.248]
+Epoch 59/500 => Train Loss: 0.9971, Val Loss: 0.9988, Best: 0.9781, SMAPE (T/V): 67.62/68.15, MAPE_safe (T/V): 55.44/62.43, Time: 71.73s
+train Epoch 60: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.05] 
+val Epoch 60: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.254]
+Epoch 60/500 => Train Loss: 0.9943, Val Loss: 0.9953, Best: 0.9781, SMAPE (T/V): 67.32/67.65, MAPE_safe (T/V): 55.19/61.22, Time: 71.76s
+train Epoch 61: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.09] 
+val Epoch 61: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.229]
+Epoch 61/500 => Train Loss: 0.9932, Val Loss: 1.0070, Best: 0.9781, SMAPE (T/V): 67.40/68.06, MAPE_safe (T/V): 55.18/60.56, Time: 72.59s
+train Epoch 62: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.852]
+val Epoch 62: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.154]
+Epoch 62/500 => Train Loss: 0.9933, Val Loss: 1.0157, Best: 0.9781, SMAPE (T/V): 67.53/68.45, MAPE_safe (T/V): 55.38/60.76, Time: 71.56s
+train Epoch 63: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.32] 
+val Epoch 63: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.256]
+Epoch 63/500 => Train Loss: 0.9914, Val Loss: 0.9976, Best: 0.9781, SMAPE (T/V): 67.51/67.72, MAPE_safe (T/V): 55.33/62.04, Time: 72.26s
+train Epoch 64: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.655]
+val Epoch 64: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.193]
+Epoch 64/500 => Train Loss: 0.9916, Val Loss: 0.9968, Best: 0.9781, SMAPE (T/V): 67.57/68.25, MAPE_safe (T/V): 55.53/62.75, Time: 72.61s
+train Epoch 65: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.25] 
+val Epoch 65: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.255]
+Epoch 65/500 => Train Loss: 0.9901, Val Loss: 0.9952, Best: 0.9781, SMAPE (T/V): 67.50/68.21, MAPE_safe (T/V): 55.68/63.91, Time: 72.15s
+train Epoch 66: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.416]
+val Epoch 66: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.239]
+Epoch 66/500 => Train Loss: 0.9895, Val Loss: 1.0030, Best: 0.9781, SMAPE (T/V): 67.48/68.36, MAPE_safe (T/V): 55.60/63.73, Time: 71.85s
+train Epoch 67: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.752]
+val Epoch 67: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.291]
+[INFO] Early stopping triggered after 67 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 68: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.06] 
+val Epoch 68: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.199]
+[INFO] Early stopping triggered after 68 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 69: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.626]
+val Epoch 69: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.255]
+[INFO] Early stopping triggered after 69 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 70: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=2.04] 
+val Epoch 70: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.239]
+[INFO] Early stopping triggered after 70 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 71: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=2.42] 
+val Epoch 71: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.238]
+[INFO] Early stopping triggered after 71 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 72: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.435]
+val Epoch 72: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.188]
+[INFO] Early stopping triggered after 72 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 73: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.508]
+val Epoch 73: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.205]
+[INFO] Early stopping triggered after 73 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 74: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.14] 
+val Epoch 74: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.208]
+[INFO] Early stopping triggered after 74 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 75: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.1]  
+val Epoch 75: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.227]
+[INFO] Early stopping triggered after 75 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 76: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.843]
+val Epoch 76: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.226]
+[INFO] Early stopping triggered after 76 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 77: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.278]
+val Epoch 77: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.223]
+[INFO] Early stopping triggered after 77 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 78: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.988]
+val Epoch 78: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.226]
+[INFO] Early stopping triggered after 78 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 79: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.189]
+val Epoch 79: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.226]
+[INFO] Early stopping triggered after 79 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 80: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.62] 
+val Epoch 80: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.23] 
+[INFO] Early stopping triggered after 80 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 81: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.13] 
+val Epoch 81: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.246]
+[INFO] Early stopping triggered after 81 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 82: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.955]
+val Epoch 82: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.174]
+[INFO] Early stopping triggered after 82 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 83: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.997]
+val Epoch 83: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.281]
+[INFO] Early stopping triggered after 83 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 84: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.11] 
+val Epoch 84: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.248]
+[INFO] Early stopping triggered after 84 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 85: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.642]
+val Epoch 85: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.213]
+[INFO] Early stopping triggered after 85 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 86: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.757]
+val Epoch 86: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.275]
+[INFO] Early stopping triggered after 86 epochs
+[INFO] Best validation loss: 0.978083
+train Epoch 87: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.07] 
+val Epoch 87: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.305]
+[INFO] New best model saved with val_loss: 0.977600
+Epoch 87/500 => Train Loss: 0.9999, Val Loss: 0.9776, Best: 0.9776, SMAPE (T/V): 67.76/67.41, MAPE_safe (T/V): 55.51/61.68, Time: 72.46s
+train Epoch 88: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.587]
+val Epoch 88: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.166]
+Epoch 88/500 => Train Loss: 0.9966, Val Loss: 0.9968, Best: 0.9776, SMAPE (T/V): 67.54/68.11, MAPE_safe (T/V): 55.19/62.12, Time: 72.20s
+train Epoch 89: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.289]
+val Epoch 89: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.344]
+Epoch 89/500 => Train Loss: 0.9950, Val Loss: 0.9933, Best: 0.9776, SMAPE (T/V): 67.64/67.60, MAPE_safe (T/V): 55.41/61.74, Time: 72.04s
+train Epoch 90: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.05] 
+val Epoch 90: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.228]
+Epoch 90/500 => Train Loss: 0.9954, Val Loss: 0.9810, Best: 0.9776, SMAPE (T/V): 67.62/67.33, MAPE_safe (T/V): 55.48/59.80, Time: 71.68s
+train Epoch 91: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.26] 
+val Epoch 91: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.244]
+Epoch 91/500 => Train Loss: 0.9970, Val Loss: 0.9992, Best: 0.9776, SMAPE (T/V): 67.58/67.81, MAPE_safe (T/V): 55.23/62.76, Time: 72.19s
+train Epoch 92: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.09] 
+val Epoch 92: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.204]
+Epoch 92/500 => Train Loss: 0.9943, Val Loss: 1.0165, Best: 0.9776, SMAPE (T/V): 67.35/69.57, MAPE_safe (T/V): 55.27/63.46, Time: 72.56s
+train Epoch 93: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.82] 
+val Epoch 93: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.256]
+Epoch 93/500 => Train Loss: 0.9917, Val Loss: 1.0054, Best: 0.9776, SMAPE (T/V): 67.42/67.34, MAPE_safe (T/V): 55.28/63.46, Time: 72.43s
+train Epoch 94: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.03] 
+val Epoch 94: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.234]
+Epoch 94/500 => Train Loss: 0.9931, Val Loss: 0.9942, Best: 0.9776, SMAPE (T/V): 67.54/68.21, MAPE_safe (T/V): 55.48/63.73, Time: 72.90s
+train Epoch 95: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.769]
+val Epoch 95: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.231]
+Epoch 95/500 => Train Loss: 0.9914, Val Loss: 0.9970, Best: 0.9776, SMAPE (T/V): 67.44/68.12, MAPE_safe (T/V): 55.50/61.63, Time: 73.02s
+train Epoch 96: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.579]
+val Epoch 96: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.29] 
+Epoch 96/500 => Train Loss: 0.9932, Val Loss: 0.9996, Best: 0.9776, SMAPE (T/V): 67.50/68.13, MAPE_safe (T/V): 55.49/62.64, Time: 72.89s
+train Epoch 97: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.58] 
+val Epoch 97: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.204]
+Epoch 97/500 => Train Loss: 0.9910, Val Loss: 0.9916, Best: 0.9776, SMAPE (T/V): 67.47/68.06, MAPE_safe (T/V): 55.44/60.52, Time: 73.02s
+train Epoch 98: 100%|██████████| 158/158 [00:56<00:00,  2.82it/s, loss=0.823]
+val Epoch 98: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.286]
+Epoch 98/500 => Train Loss: 0.9910, Val Loss: 1.0219, Best: 0.9776, SMAPE (T/V): 67.52/69.06, MAPE_safe (T/V): 55.17/68.43, Time: 73.24s
+train Epoch 99: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.21] 
+val Epoch 99: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.156]
+Epoch 99/500 => Train Loss: 0.9932, Val Loss: 1.0019, Best: 0.9776, SMAPE (T/V): 67.43/68.49, MAPE_safe (T/V): 55.62/59.61, Time: 72.89s
+train Epoch 100: 100%|██████████| 158/158 [00:56<00:00,  2.82it/s, loss=0.654]
+val Epoch 100: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.221]
+Epoch 100/500 => Train Loss: 0.9903, Val Loss: 1.0111, Best: 0.9776, SMAPE (T/V): 67.16/68.01, MAPE_safe (T/V): 54.86/62.44, Time: 73.61s
+train Epoch 101: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.3]  
+val Epoch 101: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.263]
+Epoch 101/500 => Train Loss: 0.9899, Val Loss: 1.0139, Best: 0.9776, SMAPE (T/V): 67.41/68.94, MAPE_safe (T/V): 55.29/64.67, Time: 72.88s
+train Epoch 102: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.326]
+val Epoch 102: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.209]
+Epoch 102/500 => Train Loss: 0.9899, Val Loss: 0.9904, Best: 0.9776, SMAPE (T/V): 67.36/67.76, MAPE_safe (T/V): 55.46/61.33, Time: 72.19s
+train Epoch 103: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=2.08] 
+val Epoch 103: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.22] 
+Epoch 103/500 => Train Loss: 0.9901, Val Loss: 1.0029, Best: 0.9776, SMAPE (T/V): 67.39/69.21, MAPE_safe (T/V): 55.27/61.74, Time: 73.12s
+train Epoch 104: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.446]
+val Epoch 104: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.196]
+Epoch 104/500 => Train Loss: 0.9911, Val Loss: 1.0316, Best: 0.9776, SMAPE (T/V): 67.38/68.96, MAPE_safe (T/V): 55.65/61.38, Time: 73.16s
+train Epoch 105: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.823]
+val Epoch 105: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.194]
+Epoch 105/500 => Train Loss: 0.9899, Val Loss: 0.9987, Best: 0.9776, SMAPE (T/V): 67.41/68.16, MAPE_safe (T/V): 55.63/61.66, Time: 72.82s
+train Epoch 106: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.95] 
+val Epoch 106: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.198]
+Epoch 106/500 => Train Loss: 0.9883, Val Loss: 1.0056, Best: 0.9776, SMAPE (T/V): 67.24/68.61, MAPE_safe (T/V): 55.44/62.70, Time: 72.50s
+train Epoch 107: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.539]
+val Epoch 107: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.2]  
+Epoch 107/500 => Train Loss: 0.9869, Val Loss: 1.0150, Best: 0.9776, SMAPE (T/V): 67.35/67.77, MAPE_safe (T/V): 55.38/61.97, Time: 72.81s
+train Epoch 108: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.645]
+val Epoch 108: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.273]
+Epoch 108/500 => Train Loss: 0.9885, Val Loss: 1.0054, Best: 0.9776, SMAPE (T/V): 67.41/69.16, MAPE_safe (T/V): 55.61/60.64, Time: 73.13s
+train Epoch 109: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.483]
+val Epoch 109: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.154]
+Epoch 109/500 => Train Loss: 0.9869, Val Loss: 1.0179, Best: 0.9776, SMAPE (T/V): 67.39/68.76, MAPE_safe (T/V): 55.79/60.16, Time: 72.83s
+train Epoch 110: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.63] 
+val Epoch 110: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.194]
+Epoch 110/500 => Train Loss: 0.9884, Val Loss: 1.0026, Best: 0.9776, SMAPE (T/V): 67.58/68.03, MAPE_safe (T/V): 56.21/61.82, Time: 73.15s
+train Epoch 111: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.384]
+val Epoch 111: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.225]
+Epoch 111/500 => Train Loss: 0.9877, Val Loss: 1.0151, Best: 0.9776, SMAPE (T/V): 67.39/69.01, MAPE_safe (T/V): 55.64/66.68, Time: 72.33s
+train Epoch 112: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.865]
+val Epoch 112: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.27] 
+Epoch 112/500 => Train Loss: 0.9859, Val Loss: 0.9967, Best: 0.9776, SMAPE (T/V): 67.42/68.56, MAPE_safe (T/V): 56.42/60.90, Time: 72.12s
+train Epoch 113: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.896]
+val Epoch 113: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.205]
+Epoch 113/500 => Train Loss: 0.9875, Val Loss: 1.0114, Best: 0.9776, SMAPE (T/V): 67.48/68.62, MAPE_safe (T/V): 56.22/67.35, Time: 72.66s
+train Epoch 114: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.838]
+val Epoch 114: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.219]
+Epoch 114/500 => Train Loss: 0.9867, Val Loss: 1.0022, Best: 0.9776, SMAPE (T/V): 67.26/68.47, MAPE_safe (T/V): 55.87/62.03, Time: 72.55s
+train Epoch 115: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.2]  
+val Epoch 115: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.169]
+Epoch 115/500 => Train Loss: 0.9846, Val Loss: 1.0164, Best: 0.9776, SMAPE (T/V): 67.24/69.16, MAPE_safe (T/V): 55.59/61.87, Time: 73.03s
+train Epoch 116: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.515]
+val Epoch 116: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.292]
+Epoch 116/500 => Train Loss: 0.9830, Val Loss: 1.0071, Best: 0.9776, SMAPE (T/V): 67.19/68.33, MAPE_safe (T/V): 55.75/62.54, Time: 72.44s
+train Epoch 117: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.89] 
+val Epoch 117: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.203]
+Epoch 117/500 => Train Loss: 0.9823, Val Loss: 1.0038, Best: 0.9776, SMAPE (T/V): 67.02/68.41, MAPE_safe (T/V): 55.34/61.67, Time: 72.35s
+train Epoch 118: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.655]
+val Epoch 118: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.25] 
+Epoch 118/500 => Train Loss: 0.9838, Val Loss: 1.0037, Best: 0.9776, SMAPE (T/V): 67.26/68.09, MAPE_safe (T/V): 55.54/62.71, Time: 72.12s
+train Epoch 119: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.5]  
+val Epoch 119: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.272]
+Epoch 119/500 => Train Loss: 0.9838, Val Loss: 1.0184, Best: 0.9776, SMAPE (T/V): 67.16/68.76, MAPE_safe (T/V): 55.44/65.85, Time: 72.19s
+train Epoch 120: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.839]
+val Epoch 120: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.27] 
+Epoch 120/500 => Train Loss: 0.9827, Val Loss: 1.0021, Best: 0.9776, SMAPE (T/V): 67.10/68.01, MAPE_safe (T/V): 55.34/63.78, Time: 72.75s
+train Epoch 121: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.1]  
+val Epoch 121: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.197]
+Epoch 121/500 => Train Loss: 0.9822, Val Loss: 1.0054, Best: 0.9776, SMAPE (T/V): 67.03/68.72, MAPE_safe (T/V): 55.50/63.88, Time: 71.69s
+train Epoch 122: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=2.03] 
+val Epoch 122: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.224]
+Epoch 122/500 => Train Loss: 0.9815, Val Loss: 1.0063, Best: 0.9776, SMAPE (T/V): 67.03/68.67, MAPE_safe (T/V): 55.37/62.62, Time: 72.61s
+train Epoch 123: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.789]
+val Epoch 123: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.241]
+Epoch 123/500 => Train Loss: 0.9818, Val Loss: 1.0006, Best: 0.9776, SMAPE (T/V): 67.06/68.42, MAPE_safe (T/V): 55.13/63.72, Time: 72.28s
+train Epoch 124: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.56] 
+val Epoch 124: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.255]
+Epoch 124/500 => Train Loss: 0.9815, Val Loss: 1.0021, Best: 0.9776, SMAPE (T/V): 66.97/68.57, MAPE_safe (T/V): 55.42/63.25, Time: 72.67s
+train Epoch 125: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.1]  
+val Epoch 125: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.26] 
+Epoch 125/500 => Train Loss: 0.9813, Val Loss: 1.0056, Best: 0.9776, SMAPE (T/V): 67.07/68.74, MAPE_safe (T/V): 55.59/64.87, Time: 72.15s
+train Epoch 126: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.6]  
+val Epoch 126: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.202]
+Epoch 126/500 => Train Loss: 0.9802, Val Loss: 0.9970, Best: 0.9776, SMAPE (T/V): 66.99/68.25, MAPE_safe (T/V): 55.57/63.23, Time: 72.28s
+train Epoch 127: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.03] 
+val Epoch 127: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.232]
+Epoch 127/500 => Train Loss: 0.9816, Val Loss: 1.0134, Best: 0.9776, SMAPE (T/V): 66.97/69.10, MAPE_safe (T/V): 55.76/63.02, Time: 72.45s
+train Epoch 128: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.953]
+val Epoch 128: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.207]
+Epoch 128/500 => Train Loss: 0.9807, Val Loss: 1.0020, Best: 0.9776, SMAPE (T/V): 67.06/68.06, MAPE_safe (T/V): 55.32/63.68, Time: 72.49s
+train Epoch 129: 100%|██████████| 158/158 [00:56<00:00,  2.82it/s, loss=1.74] 
+val Epoch 129: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.2]  
+Epoch 129/500 => Train Loss: 0.9785, Val Loss: 0.9997, Best: 0.9776, SMAPE (T/V): 66.91/68.23, MAPE_safe (T/V): 55.27/61.78, Time: 73.28s
+train Epoch 130: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.3]  
+val Epoch 130: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.241]
+Epoch 130/500 => Train Loss: 0.9796, Val Loss: 0.9935, Best: 0.9776, SMAPE (T/V): 66.97/68.10, MAPE_safe (T/V): 55.16/62.95, Time: 72.68s
+train Epoch 131: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.849]
+val Epoch 131: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.208]
+Epoch 131/500 => Train Loss: 0.9783, Val Loss: 1.0014, Best: 0.9776, SMAPE (T/V): 67.03/68.68, MAPE_safe (T/V): 55.86/63.21, Time: 72.69s
+train Epoch 132: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.999]
+val Epoch 132: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.224]
+Epoch 132/500 => Train Loss: 0.9789, Val Loss: 1.0088, Best: 0.9776, SMAPE (T/V): 66.98/68.69, MAPE_safe (T/V): 55.47/65.08, Time: 72.07s
+train Epoch 133: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.44] 
+val Epoch 133: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.199]
+Epoch 133/500 => Train Loss: 0.9781, Val Loss: 1.0174, Best: 0.9776, SMAPE (T/V): 66.88/69.25, MAPE_safe (T/V): 55.29/62.87, Time: 72.91s
+train Epoch 134: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.17] 
+val Epoch 134: 100%|██████████| 53/53 [00:16<00:00,  3.12it/s, loss=0.225]
+Epoch 134/500 => Train Loss: 0.9772, Val Loss: 1.0037, Best: 0.9776, SMAPE (T/V): 66.87/68.39, MAPE_safe (T/V): 55.28/62.97, Time: 72.03s
+train Epoch 135: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.838]
+val Epoch 135: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.246]
+Epoch 135/500 => Train Loss: 0.9773, Val Loss: 1.0103, Best: 0.9776, SMAPE (T/V): 66.89/68.79, MAPE_safe (T/V): 55.14/65.47, Time: 73.10s
+train Epoch 136: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.309]
+val Epoch 136: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.212]
+Epoch 136/500 => Train Loss: 0.9785, Val Loss: 1.0094, Best: 0.9776, SMAPE (T/V): 66.87/68.83, MAPE_safe (T/V): 55.55/63.84, Time: 72.51s
+train Epoch 137: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.887]
+val Epoch 137: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.222]
+[INFO] Early stopping triggered after 137 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 138: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=2.09] 
+val Epoch 138: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.199]
+[INFO] Early stopping triggered after 138 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 139: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.81] 
+val Epoch 139: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.208]
+[INFO] Early stopping triggered after 139 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 140: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.208]
+val Epoch 140: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.208]
+[INFO] Early stopping triggered after 140 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 141: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.986]
+val Epoch 141: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.18] 
+[INFO] Early stopping triggered after 141 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 142: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.551]
+val Epoch 142: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.239]
+[INFO] Early stopping triggered after 142 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 143: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=2.12] 
+val Epoch 143: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.218]
+[INFO] Early stopping triggered after 143 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 144: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.829]
+val Epoch 144: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.227]
+[INFO] Early stopping triggered after 144 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 145: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.964]
+val Epoch 145: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.232]
+[INFO] Early stopping triggered after 145 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 146: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.883]
+val Epoch 146: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.205]
+[INFO] Early stopping triggered after 146 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 147: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.634]
+val Epoch 147: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.227]
+[INFO] Early stopping triggered after 147 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 148: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.532]
+val Epoch 148: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.225]
+[INFO] Early stopping triggered after 148 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 149: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.622]
+val Epoch 149: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.231]
+[INFO] Early stopping triggered after 149 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 150: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.542]
+val Epoch 150: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.235]
+[INFO] Early stopping triggered after 150 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 151: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.49] 
+val Epoch 151: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.22] 
+[INFO] Early stopping triggered after 151 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 152: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.52] 
+val Epoch 152: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.223]
+[INFO] Early stopping triggered after 152 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 153: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.33] 
+val Epoch 153: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.223]
+[INFO] Early stopping triggered after 153 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 154: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.828]
+val Epoch 154: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.229]
+[INFO] Early stopping triggered after 154 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 155: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.936]
+val Epoch 155: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.224]
+[INFO] Early stopping triggered after 155 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 156: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.947]
+val Epoch 156: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.223]
+[INFO] Early stopping triggered after 156 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 157: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.991]
+val Epoch 157: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.222]
+[INFO] Early stopping triggered after 157 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 158: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.887]
+val Epoch 158: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.22] 
+[INFO] Early stopping triggered after 158 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 159: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.99] 
+val Epoch 159: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.221]
+[INFO] Early stopping triggered after 159 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 160: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.582]
+val Epoch 160: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.223]
+[INFO] Early stopping triggered after 160 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 161: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.21] 
+val Epoch 161: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.224]
+[INFO] Early stopping triggered after 161 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 162: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.827]
+val Epoch 162: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.307]
+[INFO] Early stopping triggered after 162 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 163: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.756]
+val Epoch 163: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.26] 
+[INFO] Early stopping triggered after 163 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 164: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=2.19] 
+val Epoch 164: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.313]
+[INFO] Early stopping triggered after 164 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 165: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.887]
+val Epoch 165: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.218]
+[INFO] Early stopping triggered after 165 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 166: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.11] 
+val Epoch 166: 100%|██████████| 53/53 [00:17<00:00,  2.95it/s, loss=0.293]
+[INFO] Early stopping triggered after 166 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 167: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.08] 
+val Epoch 167: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.169]
+[INFO] Early stopping triggered after 167 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 168: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.737]
+val Epoch 168: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.249]
+[INFO] Early stopping triggered after 168 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 169: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.28] 
+val Epoch 169: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.42] 
+[INFO] Early stopping triggered after 169 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 170: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.655]
+val Epoch 170: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.264]
+[INFO] Early stopping triggered after 170 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 171: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.868]
+val Epoch 171: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.275]
+[INFO] Early stopping triggered after 171 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 172: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.47] 
+val Epoch 172: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.248]
+[INFO] Early stopping triggered after 172 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 173: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.07] 
+val Epoch 173: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.272]
+[INFO] Early stopping triggered after 173 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 174: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.37] 
+val Epoch 174: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.213]
+[INFO] Early stopping triggered after 174 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 175: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.578]
+val Epoch 175: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.266]
+[INFO] Early stopping triggered after 175 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 176: 100%|██████████| 158/158 [00:55<00:00,  2.82it/s, loss=0.574]
+val Epoch 176: 100%|██████████| 53/53 [00:16<00:00,  3.14it/s, loss=0.284]
+[INFO] Early stopping triggered after 176 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 177: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.26] 
+val Epoch 177: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.214]
+[INFO] Early stopping triggered after 177 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 178: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.373]
+val Epoch 178: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.289]
+[INFO] Early stopping triggered after 178 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 179: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.833]
+val Epoch 179: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.197]
+[INFO] Early stopping triggered after 179 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 180: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.238]
+val Epoch 180: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.313]
+[INFO] Early stopping triggered after 180 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 181: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.735]
+val Epoch 181: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.241]
+[INFO] Early stopping triggered after 181 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 182: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.917]
+val Epoch 182: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.223]
+[INFO] Early stopping triggered after 182 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 183: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=2.38] 
+val Epoch 183: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.263]
+[INFO] Early stopping triggered after 183 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 184: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.946]
+val Epoch 184: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.187]
+[INFO] Early stopping triggered after 184 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 185: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.11] 
+val Epoch 185: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.233]
+[INFO] Early stopping triggered after 185 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 186: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.394]
+val Epoch 186: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.319]
+[INFO] Early stopping triggered after 186 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 187: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.688]
+val Epoch 187: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.213]
+[INFO] Early stopping triggered after 187 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 188: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=1.29] 
+val Epoch 188: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.291]
+[INFO] Early stopping triggered after 188 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 189: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.348]
+val Epoch 189: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.249]
+[INFO] Early stopping triggered after 189 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 190: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.1]  
+val Epoch 190: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.302]
+[INFO] Early stopping triggered after 190 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 191: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.12] 
+val Epoch 191: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.203]
+[INFO] Early stopping triggered after 191 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 192: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.14] 
+val Epoch 192: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.231]
+[INFO] Early stopping triggered after 192 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 193: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.323]
+val Epoch 193: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.232]
+[INFO] Early stopping triggered after 193 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 194: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.6]  
+val Epoch 194: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.246]
+[INFO] Early stopping triggered after 194 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 195: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.715]
+val Epoch 195: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.247]
+[INFO] Early stopping triggered after 195 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 196: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.647]
+val Epoch 196: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.217]
+[INFO] Early stopping triggered after 196 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 197: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.941]
+val Epoch 197: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.255]
+[INFO] Early stopping triggered after 197 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 198: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.28] 
+val Epoch 198: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.168]
+[INFO] Early stopping triggered after 198 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 199: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.831]
+val Epoch 199: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.206]
+[INFO] Early stopping triggered after 199 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 200: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.728]
+val Epoch 200: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.245]
+[INFO] Early stopping triggered after 200 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 201: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.693]
+val Epoch 201: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.254]
+[INFO] Early stopping triggered after 201 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 202: 100%|██████████| 158/158 [00:54<00:00,  2.91it/s, loss=0.223]
+val Epoch 202: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.241]
+[INFO] Early stopping triggered after 202 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 203: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.978]
+val Epoch 203: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.26] 
+[INFO] Early stopping triggered after 203 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 204: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.826]
+val Epoch 204: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.265]
+[INFO] Early stopping triggered after 204 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 205: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.542]
+val Epoch 205: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.243]
+[INFO] Early stopping triggered after 205 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 206: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.599]
+val Epoch 206: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.258]
+[INFO] Early stopping triggered after 206 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 207: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=2.28] 
+val Epoch 207: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.26] 
+[INFO] Early stopping triggered after 207 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 208: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.47] 
+val Epoch 208: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.289]
+[INFO] Early stopping triggered after 208 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 209: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.745]
+val Epoch 209: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.196]
+[INFO] Early stopping triggered after 209 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 210: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.477]
+val Epoch 210: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.189]
+[INFO] Early stopping triggered after 210 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 211: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=2.26] 
+val Epoch 211: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.221]
+[INFO] Early stopping triggered after 211 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 212: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.246]
+val Epoch 212: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.248]
+[INFO] Early stopping triggered after 212 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 213: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.25] 
+val Epoch 213: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.222]
+[INFO] Early stopping triggered after 213 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 214: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.63] 
+val Epoch 214: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.224]
+[INFO] Early stopping triggered after 214 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 215: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.974]
+val Epoch 215: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.235]
+[INFO] Early stopping triggered after 215 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 216: 100%|██████████| 158/158 [00:56<00:00,  2.81it/s, loss=2]    
+val Epoch 216: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.263]
+[INFO] Early stopping triggered after 216 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 217: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.931]
+val Epoch 217: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.256]
+[INFO] Early stopping triggered after 217 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 218: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.649]
+val Epoch 218: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.235]
+[INFO] Early stopping triggered after 218 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 219: 100%|██████████| 158/158 [00:55<00:00,  2.82it/s, loss=0.501]
+val Epoch 219: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.226]
+[INFO] Early stopping triggered after 219 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 220: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.279]
+val Epoch 220: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.221]
+[INFO] Early stopping triggered after 220 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 221: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.04] 
+val Epoch 221: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.229]
+[INFO] Early stopping triggered after 221 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 222: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.1]  
+val Epoch 222: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.263]
+[INFO] Early stopping triggered after 222 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 223: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.885]
+val Epoch 223: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.279]
+[INFO] Early stopping triggered after 223 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 224: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.02] 
+val Epoch 224: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.202]
+[INFO] Early stopping triggered after 224 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 225: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.01] 
+val Epoch 225: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.248]
+[INFO] Early stopping triggered after 225 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 226: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.552]
+val Epoch 226: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.236]
+[INFO] Early stopping triggered after 226 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 227: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.523]
+val Epoch 227: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.227]
+[INFO] Early stopping triggered after 227 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 228: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.14] 
+val Epoch 228: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.22] 
+[INFO] Early stopping triggered after 228 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 229: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.32] 
+val Epoch 229: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.256]
+[INFO] Early stopping triggered after 229 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 230: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=2.46] 
+val Epoch 230: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.205]
+[INFO] Early stopping triggered after 230 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 231: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.809]
+val Epoch 231: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.225]
+[INFO] Early stopping triggered after 231 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 232: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.755]
+val Epoch 232: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.238]
+[INFO] Early stopping triggered after 232 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 233: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.476]
+val Epoch 233: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.224]
+[INFO] Early stopping triggered after 233 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 234: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.33] 
+val Epoch 234: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.245]
+[INFO] Early stopping triggered after 234 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 235: 100%|██████████| 158/158 [00:54<00:00,  2.91it/s, loss=0.701]
+val Epoch 235: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.234]
+[INFO] Early stopping triggered after 235 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 236: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.504]
+val Epoch 236: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.243]
+[INFO] Early stopping triggered after 236 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 237: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.11] 
+val Epoch 237: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.248]
+[INFO] Early stopping triggered after 237 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 238: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.03] 
+val Epoch 238: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.208]
+[INFO] Early stopping triggered after 238 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 239: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.05] 
+val Epoch 239: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.239]
+[INFO] Early stopping triggered after 239 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 240: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.01] 
+val Epoch 240: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.208]
+[INFO] Early stopping triggered after 240 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 241: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.801]
+val Epoch 241: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.18] 
+[INFO] Early stopping triggered after 241 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 242: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.03] 
+val Epoch 242: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.211]
+[INFO] Early stopping triggered after 242 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 243: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.667]
+val Epoch 243: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.184]
+[INFO] Early stopping triggered after 243 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 244: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.32] 
+val Epoch 244: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.212]
+[INFO] Early stopping triggered after 244 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 245: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.723]
+val Epoch 245: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.241]
+[INFO] Early stopping triggered after 245 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 246: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.446]
+val Epoch 246: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.229]
+[INFO] Early stopping triggered after 246 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 247: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.15] 
+val Epoch 247: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.221]
+[INFO] Early stopping triggered after 247 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 248: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.04] 
+val Epoch 248: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.26] 
+[INFO] Early stopping triggered after 248 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 249: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.797]
+val Epoch 249: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.194]
+[INFO] Early stopping triggered after 249 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 250: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.329]
+val Epoch 250: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.242]
+[INFO] Early stopping triggered after 250 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 251: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.15] 
+val Epoch 251: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.218]
+[INFO] Early stopping triggered after 251 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 252: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.45] 
+val Epoch 252: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.209]
+[INFO] Early stopping triggered after 252 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 253: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.516]
+val Epoch 253: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.237]
+[INFO] Early stopping triggered after 253 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 254: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=2.85] 
+val Epoch 254: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.212]
+[INFO] Early stopping triggered after 254 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 255: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.713]
+val Epoch 255: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.197]
+[INFO] Early stopping triggered after 255 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 256: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.79] 
+val Epoch 256: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.222]
+[INFO] Early stopping triggered after 256 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 257: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.712]
+val Epoch 257: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.234]
+[INFO] Early stopping triggered after 257 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 258: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.791]
+val Epoch 258: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.229]
+[INFO] Early stopping triggered after 258 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 259: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.55] 
+val Epoch 259: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.223]
+[INFO] Early stopping triggered after 259 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 260: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.21] 
+val Epoch 260: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.254]
+[INFO] Early stopping triggered after 260 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 261: 100%|██████████| 158/158 [00:55<00:00,  2.82it/s, loss=0.987]
+val Epoch 261: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.216]
+[INFO] Early stopping triggered after 261 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 262: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.52] 
+val Epoch 262: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.231]
+[INFO] Early stopping triggered after 262 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 263: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.789]
+val Epoch 263: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.214]
+[INFO] Early stopping triggered after 263 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 264: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.66] 
+val Epoch 264: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.241]
+[INFO] Early stopping triggered after 264 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 265: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.556]
+val Epoch 265: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.234]
+[INFO] Early stopping triggered after 265 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 266: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.942]
+val Epoch 266: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.241]
+[INFO] Early stopping triggered after 266 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 267: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.532]
+val Epoch 267: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.241]
+[INFO] Early stopping triggered after 267 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 268: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.18] 
+val Epoch 268: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.235]
+[INFO] Early stopping triggered after 268 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 269: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.755]
+val Epoch 269: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.225]
+[INFO] Early stopping triggered after 269 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 270: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.692]
+val Epoch 270: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.234]
+[INFO] Early stopping triggered after 270 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 271: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.407]
+val Epoch 271: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.243]
+[INFO] Early stopping triggered after 271 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 272: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.667]
+val Epoch 272: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.221]
+[INFO] Early stopping triggered after 272 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 273: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.12] 
+val Epoch 273: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.252]
+[INFO] Early stopping triggered after 273 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 274: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.954]
+val Epoch 274: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.234]
+[INFO] Early stopping triggered after 274 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 275: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.98] 
+val Epoch 275: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.22] 
+[INFO] Early stopping triggered after 275 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 276: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.527]
+val Epoch 276: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.224]
+[INFO] Early stopping triggered after 276 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 277: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.478]
+val Epoch 277: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.234]
+[INFO] Early stopping triggered after 277 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 278: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.749]
+val Epoch 278: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.219]
+[INFO] Early stopping triggered after 278 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 279: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.58] 
+val Epoch 279: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.215]
+[INFO] Early stopping triggered after 279 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 280: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.47] 
+val Epoch 280: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.226]
+[INFO] Early stopping triggered after 280 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 281: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.781]
+val Epoch 281: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.224]
+[INFO] Early stopping triggered after 281 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 282: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.628]
+val Epoch 282: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.214]
+[INFO] Early stopping triggered after 282 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 283: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.33] 
+val Epoch 283: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.229]
+[INFO] Early stopping triggered after 283 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 284: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.364]
+val Epoch 284: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.222]
+[INFO] Early stopping triggered after 284 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 285: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.93] 
+val Epoch 285: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.228]
+[INFO] Early stopping triggered after 285 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 286: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.521]
+val Epoch 286: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.238]
+[INFO] Early stopping triggered after 286 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 287: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.35] 
+val Epoch 287: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.223]
+[INFO] Early stopping triggered after 287 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 288: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.846]
+val Epoch 288: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.24] 
+[INFO] Early stopping triggered after 288 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 289: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.773]
+val Epoch 289: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.22] 
+[INFO] Early stopping triggered after 289 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 290: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.51] 
+val Epoch 290: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.222]
+[INFO] Early stopping triggered after 290 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 291: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.895]
+val Epoch 291: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.236]
+[INFO] Early stopping triggered after 291 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 292: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.798]
+val Epoch 292: 100%|██████████| 53/53 [00:17<00:00,  2.99it/s, loss=0.233]
+[INFO] Early stopping triggered after 292 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 293: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.647]
+val Epoch 293: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.226]
+[INFO] Early stopping triggered after 293 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 294: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.74] 
+val Epoch 294: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.224]
+[INFO] Early stopping triggered after 294 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 295: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.894]
+val Epoch 295: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.229]
+[INFO] Early stopping triggered after 295 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 296: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.97] 
+val Epoch 296: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.23] 
+[INFO] Early stopping triggered after 296 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 297: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.696]
+val Epoch 297: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.24] 
+[INFO] Early stopping triggered after 297 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 298: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.65] 
+val Epoch 298: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.235]
+[INFO] Early stopping triggered after 298 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 299: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.77] 
+val Epoch 299: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.233]
+[INFO] Early stopping triggered after 299 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 300: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.613]
+val Epoch 300: 100%|██████████| 53/53 [00:16<00:00,  3.12it/s, loss=0.229]
+[INFO] Early stopping triggered after 300 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 301: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.29] 
+val Epoch 301: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.232]
+[INFO] Early stopping triggered after 301 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 302: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.864]
+val Epoch 302: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.231]
+[INFO] Early stopping triggered after 302 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 303: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.376]
+val Epoch 303: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.229]
+[INFO] Early stopping triggered after 303 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 304: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.609]
+val Epoch 304: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.23] 
+[INFO] Early stopping triggered after 304 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 305: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.61] 
+val Epoch 305: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.23] 
+[INFO] Early stopping triggered after 305 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 306: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.16] 
+val Epoch 306: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.234]
+[INFO] Early stopping triggered after 306 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 307: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.22] 
+val Epoch 307: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.228]
+[INFO] Early stopping triggered after 307 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 308: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.757]
+val Epoch 308: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.231]
+[INFO] Early stopping triggered after 308 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 309: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.7]  
+val Epoch 309: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.229]
+[INFO] Early stopping triggered after 309 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 310: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.487]
+val Epoch 310: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.229]
+[INFO] Early stopping triggered after 310 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 311: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.44] 
+val Epoch 311: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.232]
+[INFO] Early stopping triggered after 311 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 312: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.821]
+val Epoch 312: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.225]
+[INFO] Early stopping triggered after 312 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 313: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.889]
+val Epoch 313: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.229]
+[INFO] Early stopping triggered after 313 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 314: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.766]
+val Epoch 314: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.229]
+[INFO] Early stopping triggered after 314 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 315: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=1.24] 
+val Epoch 315: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.23] 
+[INFO] Early stopping triggered after 315 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 316: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.683]
+val Epoch 316: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.228]
+[INFO] Early stopping triggered after 316 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 317: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.16] 
+val Epoch 317: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.227]
+[INFO] Early stopping triggered after 317 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 318: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.532]
+val Epoch 318: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.227]
+[INFO] Early stopping triggered after 318 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 319: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=1.31] 
+val Epoch 319: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.228]
+[INFO] Early stopping triggered after 319 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 320: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.782]
+val Epoch 320: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.228]
+[INFO] Early stopping triggered after 320 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 321: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.157]
+val Epoch 321: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.228]
+[INFO] Early stopping triggered after 321 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 322: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.17] 
+val Epoch 322: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.227]
+[INFO] Early stopping triggered after 322 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 323: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.24] 
+val Epoch 323: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.228]
+[INFO] Early stopping triggered after 323 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 324: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=2.25] 
+val Epoch 324: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.244]
+[INFO] Early stopping triggered after 324 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 325: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.723]
+val Epoch 325: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.249]
+[INFO] Early stopping triggered after 325 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 326: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=2.01] 
+val Epoch 326: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.208]
+[INFO] Early stopping triggered after 326 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 327: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=2.24] 
+val Epoch 327: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.247]
+[INFO] Early stopping triggered after 327 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 328: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.65] 
+val Epoch 328: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.253]
+[INFO] Early stopping triggered after 328 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 329: 100%|██████████| 158/158 [00:55<00:00,  2.83it/s, loss=0.541]
+val Epoch 329: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.28] 
+[INFO] Early stopping triggered after 329 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 330: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.518]
+val Epoch 330: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.243]
+[INFO] Early stopping triggered after 330 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 331: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.959]
+val Epoch 331: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.236]
+[INFO] Early stopping triggered after 331 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 332: 100%|██████████| 158/158 [00:54<00:00,  2.91it/s, loss=0.425]
+val Epoch 332: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.213]
+[INFO] Early stopping triggered after 332 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 333: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.48] 
+val Epoch 333: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.204]
+[INFO] Early stopping triggered after 333 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 334: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.516]
+val Epoch 334: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.277]
+[INFO] Early stopping triggered after 334 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 335: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=2.34] 
+val Epoch 335: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.185]
+[INFO] Early stopping triggered after 335 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 336: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.4]  
+val Epoch 336: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.232]
+[INFO] Early stopping triggered after 336 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 337: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.756]
+val Epoch 337: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.273]
+[INFO] Early stopping triggered after 337 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 338: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.22] 
+val Epoch 338: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.231]
+[INFO] Early stopping triggered after 338 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 339: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.223]
+val Epoch 339: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.224]
+[INFO] Early stopping triggered after 339 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 340: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.537]
+val Epoch 340: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.244]
+[INFO] Early stopping triggered after 340 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 341: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.448]
+val Epoch 341: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.242]
+[INFO] Early stopping triggered after 341 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 342: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.919]
+val Epoch 342: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.236]
+[INFO] Early stopping triggered after 342 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 343: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.935]
+val Epoch 343: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.246]
+[INFO] Early stopping triggered after 343 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 344: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.599]
+val Epoch 344: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.195]
+[INFO] Early stopping triggered after 344 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 345: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.15] 
+val Epoch 345: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.184]
+[INFO] Early stopping triggered after 345 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 346: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.5]  
+val Epoch 346: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.272]
+[INFO] Early stopping triggered after 346 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 347: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=1.11] 
+val Epoch 347: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.253]
+[INFO] Early stopping triggered after 347 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 348: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.728]
+val Epoch 348: 100%|██████████| 53/53 [00:17<00:00,  3.02it/s, loss=0.2]  
+[INFO] Early stopping triggered after 348 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 349: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.18] 
+val Epoch 349: 100%|██████████| 53/53 [00:17<00:00,  2.96it/s, loss=0.213]
+[INFO] Early stopping triggered after 349 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 350: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.461]
+val Epoch 350: 100%|██████████| 53/53 [00:17<00:00,  2.99it/s, loss=0.236]
+[INFO] Early stopping triggered after 350 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 351: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.8]  
+val Epoch 351: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.29] 
+[INFO] Early stopping triggered after 351 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 352: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.967]
+val Epoch 352: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.237]
+[INFO] Early stopping triggered after 352 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 353: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.898]
+val Epoch 353: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.243]
+[INFO] Early stopping triggered after 353 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 354: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.51] 
+val Epoch 354: 100%|██████████| 53/53 [00:16<00:00,  3.14it/s, loss=0.198]
+[INFO] Early stopping triggered after 354 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 355: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.18] 
+val Epoch 355: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.252]
+[INFO] Early stopping triggered after 355 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 356: 100%|██████████| 158/158 [00:54<00:00,  2.91it/s, loss=0.465]
+val Epoch 356: 100%|██████████| 53/53 [00:16<00:00,  3.12it/s, loss=0.221]
+[INFO] Early stopping triggered after 356 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 357: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.09] 
+val Epoch 357: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.233]
+[INFO] Early stopping triggered after 357 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 358: 100%|██████████| 158/158 [00:54<00:00,  2.91it/s, loss=0.644]
+val Epoch 358: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.256]
+[INFO] Early stopping triggered after 358 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 359: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.633]
+val Epoch 359: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.251]
+[INFO] Early stopping triggered after 359 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 360: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.58] 
+val Epoch 360: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.176]
+[INFO] Early stopping triggered after 360 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 361: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.49] 
+val Epoch 361: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.262]
+[INFO] Early stopping triggered after 361 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 362: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.489]
+val Epoch 362: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.222]
+[INFO] Early stopping triggered after 362 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 363: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.655]
+val Epoch 363: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.234]
+[INFO] Early stopping triggered after 363 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 364: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.404]
+val Epoch 364: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.237]
+[INFO] Early stopping triggered after 364 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 365: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.52] 
+val Epoch 365: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.177]
+[INFO] Early stopping triggered after 365 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 366: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.752]
+val Epoch 366: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.233]
+[INFO] Early stopping triggered after 366 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 367: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.29] 
+val Epoch 367: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.179]
+[INFO] Early stopping triggered after 367 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 368: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.742]
+val Epoch 368: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.236]
+[INFO] Early stopping triggered after 368 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 369: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.821]
+val Epoch 369: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.217]
+[INFO] Early stopping triggered after 369 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 370: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.14] 
+val Epoch 370: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.278]
+[INFO] Early stopping triggered after 370 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 371: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.42] 
+val Epoch 371: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.244]
+[INFO] Early stopping triggered after 371 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 372: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.35] 
+val Epoch 372: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.23] 
+[INFO] Early stopping triggered after 372 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 373: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.494]
+val Epoch 373: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.246]
+[INFO] Early stopping triggered after 373 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 374: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.03] 
+val Epoch 374: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.228]
+[INFO] Early stopping triggered after 374 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 375: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.558]
+val Epoch 375: 100%|██████████| 53/53 [00:17<00:00,  3.00it/s, loss=0.221]
+[INFO] Early stopping triggered after 375 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 376: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.504]
+val Epoch 376: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.216]
+[INFO] Early stopping triggered after 376 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 377: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.32] 
+val Epoch 377: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.218]
+[INFO] Early stopping triggered after 377 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 378: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.55] 
+val Epoch 378: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.233]
+[INFO] Early stopping triggered after 378 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 379: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.02] 
+val Epoch 379: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.186]
+[INFO] Early stopping triggered after 379 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 380: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.06] 
+val Epoch 380: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.233]
+[INFO] Early stopping triggered after 380 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 381: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.64] 
+val Epoch 381: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.23] 
+[INFO] Early stopping triggered after 381 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 382: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.725]
+val Epoch 382: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.283]
+[INFO] Early stopping triggered after 382 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 383: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.835]
+val Epoch 383: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.205]
+[INFO] Early stopping triggered after 383 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 384: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.14] 
+val Epoch 384: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.241]
+[INFO] Early stopping triggered after 384 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 385: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.565]
+val Epoch 385: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.274]
+[INFO] Early stopping triggered after 385 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 386: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.592]
+val Epoch 386: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.224]
+[INFO] Early stopping triggered after 386 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 387: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.972]
+val Epoch 387: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.211]
+[INFO] Early stopping triggered after 387 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 388: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.607]
+val Epoch 388: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.253]
+[INFO] Early stopping triggered after 388 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 389: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.51] 
+val Epoch 389: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.234]
+[INFO] Early stopping triggered after 389 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 390: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.8]  
+val Epoch 390: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.25] 
+[INFO] Early stopping triggered after 390 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 391: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.668]
+val Epoch 391: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.279]
+[INFO] Early stopping triggered after 391 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 392: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.156]
+val Epoch 392: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.222]
+[INFO] Early stopping triggered after 392 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 393: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.829]
+val Epoch 393: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.233]
+[INFO] Early stopping triggered after 393 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 394: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.05] 
+val Epoch 394: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.218]
+[INFO] Early stopping triggered after 394 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 395: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.52] 
+val Epoch 395: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.215]
+[INFO] Early stopping triggered after 395 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 396: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.797]
+val Epoch 396: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.257]
+[INFO] Early stopping triggered after 396 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 397: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.433]
+val Epoch 397: 100%|██████████| 53/53 [00:17<00:00,  3.01it/s, loss=0.246]
+[INFO] Early stopping triggered after 397 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 398: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.971]
+val Epoch 398: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.147]
+[INFO] Early stopping triggered after 398 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 399: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.457]
+val Epoch 399: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.259]
+[INFO] Early stopping triggered after 399 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 400: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.16] 
+val Epoch 400: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.279]
+[INFO] Early stopping triggered after 400 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 401: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.706]
+val Epoch 401: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.231]
+[INFO] Early stopping triggered after 401 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 402: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.82] 
+val Epoch 402: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.219]
+[INFO] Early stopping triggered after 402 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 403: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.606]
+val Epoch 403: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.212]
+[INFO] Early stopping triggered after 403 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 404: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.798]
+val Epoch 404: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.229]
+[INFO] Early stopping triggered after 404 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 405: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.768]
+val Epoch 405: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.225]
+[INFO] Early stopping triggered after 405 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 406: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.463]
+val Epoch 406: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.212]
+[INFO] Early stopping triggered after 406 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 407: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.87] 
+val Epoch 407: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.222]
+[INFO] Early stopping triggered after 407 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 408: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.9]  
+val Epoch 408: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.253]
+[INFO] Early stopping triggered after 408 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 409: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.609]
+val Epoch 409: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.218]
+[INFO] Early stopping triggered after 409 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 410: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.641]
+val Epoch 410: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.228]
+[INFO] Early stopping triggered after 410 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 411: 100%|██████████| 158/158 [00:54<00:00,  2.91it/s, loss=0.876]
+val Epoch 411: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.231]
+[INFO] Early stopping triggered after 411 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 412: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.379]
+val Epoch 412: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.211]
+[INFO] Early stopping triggered after 412 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 413: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.846]
+val Epoch 413: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.239]
+[INFO] Early stopping triggered after 413 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 414: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.19] 
+val Epoch 414: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.258]
+[INFO] Early stopping triggered after 414 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 415: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=2.14] 
+val Epoch 415: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.237]
+[INFO] Early stopping triggered after 415 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 416: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.736]
+val Epoch 416: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.217]
+[INFO] Early stopping triggered after 416 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 417: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.18] 
+val Epoch 417: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.237]
+[INFO] Early stopping triggered after 417 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 418: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.04] 
+val Epoch 418: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.263]
+[INFO] Early stopping triggered after 418 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 419: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.855]
+val Epoch 419: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.266]
+[INFO] Early stopping triggered after 419 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 420: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.774]
+val Epoch 420: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.208]
+[INFO] Early stopping triggered after 420 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 421: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.03] 
+val Epoch 421: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.206]
+[INFO] Early stopping triggered after 421 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 422: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.951]
+val Epoch 422: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.226]
+[INFO] Early stopping triggered after 422 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 423: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.825]
+val Epoch 423: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.226]
+[INFO] Early stopping triggered after 423 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 424: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.621]
+val Epoch 424: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.248]
+[INFO] Early stopping triggered after 424 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 425: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.503]
+val Epoch 425: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.224]
+[INFO] Early stopping triggered after 425 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 426: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.845]
+val Epoch 426: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.214]
+[INFO] Early stopping triggered after 426 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 427: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.53] 
+val Epoch 427: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.208]
+[INFO] Early stopping triggered after 427 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 428: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.918]
+val Epoch 428: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.243]
+[INFO] Early stopping triggered after 428 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 429: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.09] 
+val Epoch 429: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.215]
+[INFO] Early stopping triggered after 429 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 430: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.649]
+val Epoch 430: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.244]
+[INFO] Early stopping triggered after 430 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 431: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.669]
+val Epoch 431: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.211]
+[INFO] Early stopping triggered after 431 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 432: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.283]
+val Epoch 432: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.244]
+[INFO] Early stopping triggered after 432 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 433: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.04] 
+val Epoch 433: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.216]
+[INFO] Early stopping triggered after 433 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 434: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.472]
+val Epoch 434: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.219]
+[INFO] Early stopping triggered after 434 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 435: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=0.504]
+val Epoch 435: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.255]
+[INFO] Early stopping triggered after 435 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 436: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.17] 
+val Epoch 436: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.247]
+[INFO] Early stopping triggered after 436 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 437: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.13] 
+val Epoch 437: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.241]
+[INFO] Early stopping triggered after 437 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 438: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.516]
+val Epoch 438: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.212]
+[INFO] Early stopping triggered after 438 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 439: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.215]
+val Epoch 439: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.224]
+[INFO] Early stopping triggered after 439 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 440: 100%|██████████| 158/158 [00:55<00:00,  2.84it/s, loss=0.532]
+val Epoch 440: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.251]
+[INFO] Early stopping triggered after 440 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 441: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.684]
+val Epoch 441: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.242]
+[INFO] Early stopping triggered after 441 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 442: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=1.31] 
+val Epoch 442: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.249]
+[INFO] Early stopping triggered after 442 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 443: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.52] 
+val Epoch 443: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.265]
+[INFO] Early stopping triggered after 443 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 444: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=1.27] 
+val Epoch 444: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.251]
+[INFO] Early stopping triggered after 444 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 445: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.21] 
+val Epoch 445: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.227]
+[INFO] Early stopping triggered after 445 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 446: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.942]
+val Epoch 446: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.241]
+[INFO] Early stopping triggered after 446 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 447: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.284]
+val Epoch 447: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.218]
+[INFO] Early stopping triggered after 447 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 448: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.5]  
+val Epoch 448: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.231]
+[INFO] Early stopping triggered after 448 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 449: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.976]
+val Epoch 449: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.243]
+[INFO] Early stopping triggered after 449 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 450: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=2.68] 
+val Epoch 450: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.248]
+[INFO] Early stopping triggered after 450 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 451: 100%|██████████| 158/158 [00:55<00:00,  2.85it/s, loss=1.14] 
+val Epoch 451: 100%|██████████| 53/53 [00:17<00:00,  3.03it/s, loss=0.246]
+[INFO] Early stopping triggered after 451 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 452: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.761]
+val Epoch 452: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.221]
+[INFO] Early stopping triggered after 452 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 453: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.966]
+val Epoch 453: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.23] 
+[INFO] Early stopping triggered after 453 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 454: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.895]
+val Epoch 454: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.256]
+[INFO] Early stopping triggered after 454 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 455: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.5]  
+val Epoch 455: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.242]
+[INFO] Early stopping triggered after 455 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 456: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=1.01] 
+val Epoch 456: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.232]
+[INFO] Early stopping triggered after 456 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 457: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.39] 
+val Epoch 457: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.226]
+[INFO] Early stopping triggered after 457 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 458: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.911]
+val Epoch 458: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.229]
+[INFO] Early stopping triggered after 458 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 459: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.14] 
+val Epoch 459: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.244]
+[INFO] Early stopping triggered after 459 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 460: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.897]
+val Epoch 460: 100%|██████████| 53/53 [00:17<00:00,  3.06it/s, loss=0.205]
+[INFO] Early stopping triggered after 460 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 461: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.29] 
+val Epoch 461: 100%|██████████| 53/53 [00:17<00:00,  3.04it/s, loss=0.207]
+[INFO] Early stopping triggered after 461 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 462: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.51] 
+val Epoch 462: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.217]
+[INFO] Early stopping triggered after 462 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 463: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.651]
+val Epoch 463: 100%|██████████| 53/53 [00:16<00:00,  3.12it/s, loss=0.214]
+[INFO] Early stopping triggered after 463 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 464: 100%|██████████| 158/158 [00:54<00:00,  2.91it/s, loss=0.997]
+val Epoch 464: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.229]
+[INFO] Early stopping triggered after 464 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 465: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.65] 
+val Epoch 465: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.229]
+[INFO] Early stopping triggered after 465 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 466: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=1.41] 
+val Epoch 466: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.23] 
+[INFO] Early stopping triggered after 466 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 467: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=2.39] 
+val Epoch 467: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.227]
+[INFO] Early stopping triggered after 467 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 468: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.328]
+val Epoch 468: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.239]
+[INFO] Early stopping triggered after 468 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 469: 100%|██████████| 158/158 [00:54<00:00,  2.91it/s, loss=0.942]
+val Epoch 469: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.197]
+[INFO] Early stopping triggered after 469 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 470: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.792]
+val Epoch 470: 100%|██████████| 53/53 [00:17<00:00,  3.07it/s, loss=0.224]
+[INFO] Early stopping triggered after 470 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 471: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.178]
+val Epoch 471: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.207]
+[INFO] Early stopping triggered after 471 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 472: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.24] 
+val Epoch 472: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.226]
+[INFO] Early stopping triggered after 472 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 473: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.44] 
+val Epoch 473: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.21] 
+[INFO] Early stopping triggered after 473 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 474: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=0.531]
+val Epoch 474: 100%|██████████| 53/53 [00:16<00:00,  3.12it/s, loss=0.22] 
+[INFO] Early stopping triggered after 474 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 475: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.08] 
+val Epoch 475: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.201]
+[INFO] Early stopping triggered after 475 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 476: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.39] 
+val Epoch 476: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.254]
+[INFO] Early stopping triggered after 476 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 477: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.08] 
+val Epoch 477: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.222]
+[INFO] Early stopping triggered after 477 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 478: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.43] 
+val Epoch 478: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.247]
+[INFO] Early stopping triggered after 478 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 479: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.96] 
+val Epoch 479: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.229]
+[INFO] Early stopping triggered after 479 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 480: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.16] 
+val Epoch 480: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.201]
+[INFO] Early stopping triggered after 480 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 481: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.518]
+val Epoch 481: 100%|██████████| 53/53 [00:16<00:00,  3.12it/s, loss=0.223]
+[INFO] Early stopping triggered after 481 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 482: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.261]
+val Epoch 482: 100%|██████████| 53/53 [00:17<00:00,  3.12it/s, loss=0.236]
+[INFO] Early stopping triggered after 482 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 483: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.525]
+val Epoch 483: 100%|██████████| 53/53 [00:16<00:00,  3.12it/s, loss=0.247]
+[INFO] Early stopping triggered after 483 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 484: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.3]  
+val Epoch 484: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.244]
+[INFO] Early stopping triggered after 484 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 485: 100%|██████████| 158/158 [00:54<00:00,  2.87it/s, loss=0.48] 
+val Epoch 485: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.218]
+[INFO] Early stopping triggered after 485 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 486: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.15] 
+val Epoch 486: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.213]
+[INFO] Early stopping triggered after 486 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 487: 100%|██████████| 158/158 [00:54<00:00,  2.92it/s, loss=0.827]
+val Epoch 487: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.24] 
+[INFO] Early stopping triggered after 487 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 488: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.958]
+val Epoch 488: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.226]
+[INFO] Early stopping triggered after 488 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 489: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.58] 
+val Epoch 489: 100%|██████████| 53/53 [00:17<00:00,  3.05it/s, loss=0.247]
+[INFO] Early stopping triggered after 489 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 490: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.858]
+val Epoch 490: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.238]
+[INFO] Early stopping triggered after 490 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 491: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=1.33] 
+val Epoch 491: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.238]
+[INFO] Early stopping triggered after 491 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 492: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.763]
+val Epoch 492: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.236]
+[INFO] Early stopping triggered after 492 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 493: 100%|██████████| 158/158 [00:55<00:00,  2.86it/s, loss=0.821]
+val Epoch 493: 100%|██████████| 53/53 [00:16<00:00,  3.13it/s, loss=0.222]
+[INFO] Early stopping triggered after 493 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 494: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.35] 
+val Epoch 494: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.236]
+[INFO] Early stopping triggered after 494 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 495: 100%|██████████| 158/158 [00:54<00:00,  2.90it/s, loss=0.725]
+val Epoch 495: 100%|██████████| 53/53 [00:16<00:00,  3.14it/s, loss=0.248]
+[INFO] Early stopping triggered after 495 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 496: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.11] 
+val Epoch 496: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.22] 
+[INFO] Early stopping triggered after 496 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 497: 100%|██████████| 158/158 [00:54<00:00,  2.89it/s, loss=1.75] 
+val Epoch 497: 100%|██████████| 53/53 [00:17<00:00,  3.08it/s, loss=0.231]
+[INFO] Early stopping triggered after 497 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 498: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=0.597]
+val Epoch 498: 100%|██████████| 53/53 [00:17<00:00,  3.10it/s, loss=0.246]
+[INFO] Early stopping triggered after 498 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 499: 100%|██████████| 158/158 [00:54<00:00,  2.88it/s, loss=1.24] 
+val Epoch 499: 100%|██████████| 53/53 [00:17<00:00,  3.09it/s, loss=0.235]
+[INFO] Early stopping triggered after 499 epochs
+[INFO] Best validation loss: 0.977600
+train Epoch 500: 100%|██████████| 158/158 [00:55<00:00,  2.87it/s, loss=0.844]
+val Epoch 500: 100%|██████████| 53/53 [00:17<00:00,  3.11it/s, loss=0.214]
+[INFO] Early stopping triggered after 500 epochs
+[INFO] Best validation loss: 0.977600
+Training complete in 605m 0s, best val loss: 0.9776

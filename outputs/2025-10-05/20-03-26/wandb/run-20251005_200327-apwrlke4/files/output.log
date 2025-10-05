@@ -1,0 +1,222 @@
+/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+Baseline MAPE (const=1.0): Train=48.29%, Val=46.17%
+train Epoch 1: 100%|██████████| 118/118 [00:04<00:00, 26.04it/s, Loss=3.8413, SMAPE=44.13%, MAPE_safe=95.17%] 
+val Epoch 1: 100%|██████████| 40/40 [00:00<00:00, 42.22it/s, Loss=2.8164, SMAPE=44.43%, MAPE_safe=84.16%] 
+[INFO] New best model saved with val_loss: 2.6232
+Epoch 1/500 => Train Loss: 14.6468, Val Loss: 2.6232, Best Loss: 2.6232, SMAPE (T/V): 52.14/40.50, MAPE_safe (T/V): 147.08/89.29, Time: 5.51s
+train Epoch 2: 100%|██████████| 118/118 [00:03<00:00, 32.98it/s, Loss=4.2893, SMAPE=46.78%, MAPE_safe=95.38%] 
+val Epoch 2: 100%|██████████| 40/40 [00:00<00:00, 43.00it/s, Loss=4.4747, SMAPE=62.82%, MAPE_safe=191.32%]
+Epoch 2/500 => Train Loss: 4.8363, Val Loss: 2.6422, Best Loss: 2.6232, SMAPE (T/V): 46.77/39.56, MAPE_safe (T/V): 107.87/77.90, Time: 4.51s
+train Epoch 3: 100%|██████████| 118/118 [00:03<00:00, 33.06it/s, Loss=3.7505, SMAPE=49.42%, MAPE_safe=130.12%]
+val Epoch 3: 100%|██████████| 40/40 [00:00<00:00, 42.86it/s, Loss=5.1220, SMAPE=67.60%, MAPE_safe=239.18%]
+Epoch 3/500 => Train Loss: 4.0805, Val Loss: 2.9902, Best Loss: 2.6232, SMAPE (T/V): 43.45/45.32, MAPE_safe (T/V): 83.10/121.24, Time: 4.51s
+train Epoch 4: 100%|██████████| 118/118 [00:03<00:00, 33.26it/s, Loss=4.4590, SMAPE=41.56%, MAPE_safe=79.03%]
+val Epoch 4: 100%|██████████| 40/40 [00:00<00:00, 43.04it/s, Loss=2.6056, SMAPE=41.03%, MAPE_safe=71.74%] 
+[INFO] New best model saved with val_loss: 2.4822
+Epoch 4/500 => Train Loss: 4.0242, Val Loss: 2.4822, Best Loss: 2.4822, SMAPE (T/V): 46.44/37.47, MAPE_safe (T/V): 105.96/68.04, Time: 4.51s
+train Epoch 5: 100%|██████████| 118/118 [00:03<00:00, 33.07it/s, Loss=3.0294, SMAPE=41.11%, MAPE_safe=68.03%]
+val Epoch 5: 100%|██████████| 40/40 [00:00<00:00, 43.14it/s, Loss=1.7505, SMAPE=23.53%, MAPE_safe=24.97%]
+[INFO] New best model saved with val_loss: 2.3769
+Epoch 5/500 => Train Loss: 3.8579, Val Loss: 2.3769, Best Loss: 2.3769, SMAPE (T/V): 42.10/35.71, MAPE_safe (T/V): 74.11/57.76, Time: 4.53s
+train Epoch 6: 100%|██████████| 118/118 [00:03<00:00, 33.21it/s, Loss=2.6492, SMAPE=40.68%, MAPE_safe=81.58%]
+val Epoch 6: 100%|██████████| 40/40 [00:00<00:00, 42.75it/s, Loss=2.4201, SMAPE=37.72%, MAPE_safe=60.92%] 
+Epoch 6/500 => Train Loss: 3.6479, Val Loss: 2.5264, Best Loss: 2.3769, SMAPE (T/V): 42.28/38.69, MAPE_safe (T/V): 77.06/77.94, Time: 4.49s
+train Epoch 7: 100%|██████████| 118/118 [00:03<00:00, 33.42it/s, Loss=2.7579, SMAPE=38.99%, MAPE_safe=62.95%]
+val Epoch 7: 100%|██████████| 40/40 [00:00<00:00, 43.13it/s, Loss=2.2201, SMAPE=33.70%, MAPE_safe=49.29%]
+Epoch 7/500 => Train Loss: 3.3344, Val Loss: 2.3830, Best Loss: 2.3769, SMAPE (T/V): 41.86/35.63, MAPE_safe (T/V): 74.89/55.08, Time: 4.46s
+train Epoch 8: 100%|██████████| 118/118 [00:03<00:00, 33.05it/s, Loss=3.2053, SMAPE=39.89%, MAPE_safe=64.04%]
+val Epoch 8: 100%|██████████| 40/40 [00:00<00:00, 43.09it/s, Loss=2.3294, SMAPE=35.96%, MAPE_safe=55.64%]
+Epoch 8/500 => Train Loss: 3.3001, Val Loss: 2.3992, Best Loss: 2.3769, SMAPE (T/V): 40.68/35.59, MAPE_safe (T/V): 65.62/53.30, Time: 4.50s
+train Epoch 9: 100%|██████████| 118/118 [00:03<00:00, 33.15it/s, Loss=4.2571, SMAPE=44.53%, MAPE_safe=98.74%] 
+val Epoch 9: 100%|██████████| 40/40 [00:00<00:00, 42.78it/s, Loss=3.9356, SMAPE=58.02%, MAPE_safe=154.26%]
+Epoch 9/500 => Train Loss: 3.3087, Val Loss: 2.6794, Best Loss: 2.3769, SMAPE (T/V): 41.27/40.71, MAPE_safe (T/V): 69.47/85.80, Time: 4.50s
+train Epoch 10: 100%|██████████| 118/118 [00:03<00:00, 33.28it/s, Loss=3.1549, SMAPE=42.10%, MAPE_safe=74.62%]
+val Epoch 10: 100%|██████████| 40/40 [00:00<00:00, 43.02it/s, Loss=2.4121, SMAPE=37.56%, MAPE_safe=60.45%] 
+Epoch 10/500 => Train Loss: 3.4787, Val Loss: 2.4619, Best Loss: 2.3769, SMAPE (T/V): 42.60/37.10, MAPE_safe (T/V): 78.45/66.95, Time: 4.48s
+train Epoch 11: 100%|██████████| 118/118 [00:04<00:00, 27.64it/s, Loss=4.2435, SMAPE=42.28%, MAPE_safe=68.99%]
+val Epoch 11: 100%|██████████| 40/40 [00:00<00:00, 42.80it/s, Loss=2.2677, SMAPE=34.70%, MAPE_safe=52.05%]
+Epoch 11/500 => Train Loss: 3.6016, Val Loss: 2.4090, Best Loss: 2.3769, SMAPE (T/V): 41.44/35.89, MAPE_safe (T/V): 69.74/58.80, Time: 5.21s
+train Epoch 12: 100%|██████████| 118/118 [00:03<00:00, 33.20it/s, Loss=3.2374, SMAPE=41.75%, MAPE_safe=66.45%]
+val Epoch 12: 100%|██████████| 40/40 [00:00<00:00, 42.82it/s, Loss=2.8350, SMAPE=44.71%, MAPE_safe=85.27%]
+Epoch 12/500 => Train Loss: 3.4715, Val Loss: 2.4561, Best Loss: 2.3769, SMAPE (T/V): 41.06/36.36, MAPE_safe (T/V): 67.25/57.37, Time: 4.49s
+train Epoch 13: 100%|██████████| 118/118 [00:03<00:00, 33.11it/s, Loss=3.1693, SMAPE=40.61%, MAPE_safe=63.94%]
+val Epoch 13: 100%|██████████| 40/40 [00:00<00:00, 42.98it/s, Loss=1.9662, SMAPE=28.14%, MAPE_safe=35.21%]
+[INFO] New best model saved with val_loss: 2.3614
+Epoch 13/500 => Train Loss: 3.4039, Val Loss: 2.3614, Best Loss: 2.3614, SMAPE (T/V): 40.49/35.39, MAPE_safe (T/V): 62.82/54.42, Time: 4.52s
+train Epoch 14: 100%|██████████| 118/118 [00:03<00:00, 33.32it/s, Loss=3.3772, SMAPE=40.42%, MAPE_safe=65.49%]
+val Epoch 14: 100%|██████████| 40/40 [00:00<00:00, 42.79it/s, Loss=1.9973, SMAPE=28.75%, MAPE_safe=36.69%]
+[INFO] New best model saved with val_loss: 2.3547
+Epoch 14/500 => Train Loss: 3.3090, Val Loss: 2.3547, Best Loss: 2.3547, SMAPE (T/V): 40.26/35.42, MAPE_safe (T/V): 61.48/54.63, Time: 4.51s
+train Epoch 15: 100%|██████████| 118/118 [00:03<00:00, 33.17it/s, Loss=2.5064, SMAPE=39.40%, MAPE_safe=60.19%]
+val Epoch 15: 100%|██████████| 40/40 [00:00<00:00, 42.89it/s, Loss=1.5499, SMAPE=23.03%, MAPE_safe=22.28%]
+[INFO] New best model saved with val_loss: 2.3244
+Epoch 15/500 => Train Loss: 3.2396, Val Loss: 2.3244, Best Loss: 2.3244, SMAPE (T/V): 40.24/35.72, MAPE_safe (T/V): 60.75/52.55, Time: 4.52s
+train Epoch 16: 100%|██████████| 118/118 [00:03<00:00, 33.15it/s, Loss=2.3480, SMAPE=39.42%, MAPE_safe=58.72%]
+val Epoch 16: 100%|██████████| 40/40 [00:00<00:00, 43.03it/s, Loss=1.5052, SMAPE=23.35%, MAPE_safe=22.28%]
+[INFO] New best model saved with val_loss: 2.3215
+Epoch 16/500 => Train Loss: 3.1547, Val Loss: 2.3215, Best Loss: 2.3215, SMAPE (T/V): 40.04/35.93, MAPE_safe (T/V): 59.05/51.47, Time: 4.52s
+train Epoch 17: 100%|██████████| 118/118 [00:03<00:00, 33.40it/s, Loss=2.2027, SMAPE=37.09%, MAPE_safe=55.22%]
+val Epoch 17: 100%|██████████| 40/40 [00:00<00:00, 43.08it/s, Loss=1.4940, SMAPE=23.54%, MAPE_safe=22.43%]
+[INFO] New best model saved with val_loss: 2.3137
+Epoch 17/500 => Train Loss: 3.1861, Val Loss: 2.3137, Best Loss: 2.3137, SMAPE (T/V): 40.30/36.14, MAPE_safe (T/V): 58.25/52.09, Time: 4.49s
+train Epoch 18: 100%|██████████| 118/118 [00:03<00:00, 33.33it/s, Loss=4.0815, SMAPE=39.62%, MAPE_safe=58.19%]
+val Epoch 18: 100%|██████████| 40/40 [00:00<00:00, 43.00it/s, Loss=1.4301, SMAPE=24.94%, MAPE_safe=23.52%]
+[INFO] New best model saved with val_loss: 2.3082
+Epoch 18/500 => Train Loss: 3.0451, Val Loss: 2.3082, Best Loss: 2.3082, SMAPE (T/V): 40.15/36.45, MAPE_safe (T/V): 58.03/53.39, Time: 4.50s
+train Epoch 19: 100%|██████████| 118/118 [00:03<00:00, 33.27it/s, Loss=3.7853, SMAPE=42.71%, MAPE_safe=61.84%]
+val Epoch 19: 100%|██████████| 40/40 [00:00<00:00, 43.10it/s, Loss=1.3849, SMAPE=26.60%, MAPE_safe=24.88%]
+[INFO] New best model saved with val_loss: 2.3003
+Epoch 19/500 => Train Loss: 3.0569, Val Loss: 2.3003, Best Loss: 2.3003, SMAPE (T/V): 40.41/36.99, MAPE_safe (T/V): 58.43/55.37, Time: 4.50s
+train Epoch 20: 100%|██████████| 118/118 [00:03<00:00, 33.36it/s, Loss=3.3704, SMAPE=40.27%, MAPE_safe=58.74%]
+val Epoch 20: 100%|██████████| 40/40 [00:01<00:00, 24.30it/s, Loss=1.3571, SMAPE=29.04%, MAPE_safe=27.10%]
+Epoch 20/500 => Train Loss: 2.9985, Val Loss: 2.3020, Best Loss: 2.3003, SMAPE (T/V): 40.48/37.35, MAPE_safe (T/V): 58.08/56.26, Time: 5.19s
+train Epoch 21: 100%|██████████| 118/118 [00:03<00:00, 33.04it/s, Loss=3.2155, SMAPE=40.39%, MAPE_safe=56.11%]
+val Epoch 21: 100%|██████████| 40/40 [00:00<00:00, 43.05it/s, Loss=1.3509, SMAPE=29.74%, MAPE_safe=27.71%]
+Epoch 21/500 => Train Loss: 2.9985, Val Loss: 2.3041, Best Loss: 2.3003, SMAPE (T/V): 40.60/37.46, MAPE_safe (T/V): 58.12/54.47, Time: 4.51s
+train Epoch 22: 100%|██████████| 118/118 [00:03<00:00, 33.24it/s, Loss=2.6297, SMAPE=39.43%, MAPE_safe=56.03%]
+val Epoch 22: 100%|██████████| 40/40 [00:00<00:00, 42.76it/s, Loss=1.3396, SMAPE=31.39%, MAPE_safe=29.11%]
+Epoch 22/500 => Train Loss: 2.9456, Val Loss: 2.3062, Best Loss: 2.3003, SMAPE (T/V): 40.53/37.69, MAPE_safe (T/V): 57.91/54.19, Time: 4.49s
+train Epoch 23: 100%|██████████| 118/118 [00:03<00:00, 33.38it/s, Loss=3.4931, SMAPE=43.34%, MAPE_safe=90.48%]
+val Epoch 23: 100%|██████████| 40/40 [00:00<00:00, 43.02it/s, Loss=3.8945, SMAPE=57.62%, MAPE_safe=151.54%]
+Epoch 23/500 => Train Loss: 3.0983, Val Loss: 2.6170, Best Loss: 2.3003, SMAPE (T/V): 41.10/39.89, MAPE_safe (T/V): 62.53/80.84, Time: 4.47s
+train Epoch 24: 100%|██████████| 118/118 [00:03<00:00, 33.10it/s, Loss=3.5535, SMAPE=41.15%, MAPE_safe=67.67%]
+val Epoch 24: 100%|██████████| 40/40 [00:00<00:00, 43.02it/s, Loss=2.5130, SMAPE=39.42%, MAPE_safe=66.32%]
+Epoch 24/500 => Train Loss: 3.9026, Val Loss: 2.4044, Best Loss: 2.3003, SMAPE (T/V): 42.80/35.76, MAPE_safe (T/V): 77.34/55.56, Time: 4.50s
+train Epoch 25: 100%|██████████| 118/118 [00:03<00:00, 33.08it/s, Loss=3.1865, SMAPE=42.53%, MAPE_safe=82.11%]
+val Epoch 25: 100%|██████████| 40/40 [00:00<00:00, 42.75it/s, Loss=3.0600, SMAPE=47.94%, MAPE_safe=98.76%]
+Epoch 25/500 => Train Loss: 3.5603, Val Loss: 2.5094, Best Loss: 2.3003, SMAPE (T/V): 43.20/37.11, MAPE_safe (T/V): 82.53/62.41, Time: 4.51s
+train Epoch 26: 100%|██████████| 118/118 [00:03<00:00, 33.31it/s, Loss=3.1610, SMAPE=42.99%, MAPE_safe=78.82%]
+val Epoch 26: 100%|██████████| 40/40 [00:00<00:00, 43.11it/s, Loss=3.9986, SMAPE=58.63%, MAPE_safe=158.47%]
+Epoch 26/500 => Train Loss: 3.4518, Val Loss: 2.5772, Best Loss: 2.3003, SMAPE (T/V): 41.77/38.10, MAPE_safe (T/V): 72.22/66.31, Time: 4.47s
+train Epoch 27: 100%|██████████| 118/118 [00:03<00:00, 33.22it/s, Loss=3.4553, SMAPE=41.69%, MAPE_safe=62.96%]
+val Epoch 27: 100%|██████████| 40/40 [00:00<00:00, 42.80it/s, Loss=1.9779, SMAPE=28.37%, MAPE_safe=35.76%]
+Epoch 27/500 => Train Loss: 3.2840, Val Loss: 2.3499, Best Loss: 2.3003, SMAPE (T/V): 41.27/35.46, MAPE_safe (T/V): 68.31/52.00, Time: 4.49s
+train Epoch 28: 100%|██████████| 118/118 [00:03<00:00, 33.17it/s, Loss=3.9895, SMAPE=43.33%, MAPE_safe=64.54%]
+val Epoch 28: 100%|██████████| 40/40 [00:00<00:00, 42.85it/s, Loss=2.1371, SMAPE=31.87%, MAPE_safe=44.45%]
+Epoch 28/500 => Train Loss: 3.4691, Val Loss: 2.3675, Best Loss: 2.3003, SMAPE (T/V): 40.27/35.54, MAPE_safe (T/V): 61.47/52.07, Time: 4.50s
+train Epoch 29: 100%|██████████| 118/118 [00:03<00:00, 32.99it/s, Loss=3.2840, SMAPE=37.86%, MAPE_safe=58.72%]
+val Epoch 29: 100%|██████████| 40/40 [00:00<00:00, 43.09it/s, Loss=2.2312, SMAPE=33.94%, MAPE_safe=49.93%]
+Epoch 29/500 => Train Loss: 3.2710, Val Loss: 2.3665, Best Loss: 2.3003, SMAPE (T/V): 40.26/35.86, MAPE_safe (T/V): 62.81/56.09, Time: 4.51s
+train Epoch 30: 100%|██████████| 118/118 [00:04<00:00, 27.59it/s, Loss=3.0718, SMAPE=40.76%, MAPE_safe=85.83%] 
+val Epoch 30: 100%|██████████| 40/40 [00:00<00:00, 42.95it/s, Loss=4.0888, SMAPE=59.47%, MAPE_safe=164.55%]
+Epoch 30/500 => Train Loss: 3.9550, Val Loss: 2.6174, Best Loss: 2.3003, SMAPE (T/V): 45.10/38.92, MAPE_safe (T/V): 97.30/72.74, Time: 5.21s
+train Epoch 31: 100%|██████████| 118/118 [00:03<00:00, 33.15it/s, Loss=3.7562, SMAPE=44.84%, MAPE_safe=76.59%]
+val Epoch 31: 100%|██████████| 40/40 [00:00<00:00, 42.70it/s, Loss=3.1644, SMAPE=49.34%, MAPE_safe=105.12%]
+Epoch 31/500 => Train Loss: 3.6117, Val Loss: 2.4757, Best Loss: 2.3003, SMAPE (T/V): 42.72/36.86, MAPE_safe (T/V): 76.52/60.35, Time: 4.50s
+train Epoch 32: 100%|██████████| 118/118 [00:03<00:00, 33.08it/s, Loss=3.0438, SMAPE=39.90%, MAPE_safe=65.57%]
+val Epoch 32: 100%|██████████| 40/40 [00:00<00:00, 42.87it/s, Loss=2.7373, SMAPE=43.20%, MAPE_safe=79.48%]
+Epoch 32/500 => Train Loss: 3.5392, Val Loss: 2.4161, Best Loss: 2.3003, SMAPE (T/V): 42.13/36.24, MAPE_safe (T/V): 74.30/56.07, Time: 4.50s
+train Epoch 33: 100%|██████████| 118/118 [00:03<00:00, 33.23it/s, Loss=3.0918, SMAPE=43.04%, MAPE_safe=72.11%]
+val Epoch 33: 100%|██████████| 40/40 [00:00<00:00, 43.07it/s, Loss=2.7738, SMAPE=43.77%, MAPE_safe=81.64%]
+Epoch 33/500 => Train Loss: 3.6037, Val Loss: 2.4277, Best Loss: 2.3003, SMAPE (T/V): 40.96/36.14, MAPE_safe (T/V): 66.25/56.75, Time: 4.48s
+train Epoch 34: 100%|██████████| 118/118 [00:03<00:00, 33.27it/s, Loss=2.9981, SMAPE=40.17%, MAPE_safe=62.49%]
+val Epoch 34: 100%|██████████| 40/40 [00:00<00:00, 42.85it/s, Loss=2.3976, SMAPE=37.29%, MAPE_safe=59.61%]
+Epoch 34/500 => Train Loss: 3.4470, Val Loss: 2.3705, Best Loss: 2.3003, SMAPE (T/V): 40.61/35.71, MAPE_safe (T/V): 64.65/54.69, Time: 4.48s
+train Epoch 35: 100%|██████████| 118/118 [00:03<00:00, 32.93it/s, Loss=2.8527, SMAPE=38.78%, MAPE_safe=62.02%]
+val Epoch 35: 100%|██████████| 40/40 [00:00<00:00, 43.13it/s, Loss=2.4007, SMAPE=37.35%, MAPE_safe=59.79%]
+Epoch 35/500 => Train Loss: 3.4013, Val Loss: 2.3774, Best Loss: 2.3003, SMAPE (T/V): 40.24/35.65, MAPE_safe (T/V): 62.13/52.34, Time: 4.51s
+train Epoch 36: 100%|██████████| 118/118 [00:03<00:00, 33.22it/s, Loss=4.6187, SMAPE=38.78%, MAPE_safe=60.34%]
+val Epoch 36: 100%|██████████| 40/40 [00:00<00:00, 42.82it/s, Loss=1.9030, SMAPE=26.85%, MAPE_safe=32.18%]
+Epoch 36/500 => Train Loss: 3.3887, Val Loss: 2.3251, Best Loss: 2.3003, SMAPE (T/V): 40.08/35.77, MAPE_safe (T/V): 60.46/53.96, Time: 4.49s
+train Epoch 37: 100%|██████████| 118/118 [00:03<00:00, 33.39it/s, Loss=3.4783, SMAPE=39.92%, MAPE_safe=57.72%]
+val Epoch 37: 100%|██████████| 40/40 [00:00<00:00, 43.07it/s, Loss=1.8634, SMAPE=26.00%, MAPE_safe=30.26%]
+Epoch 37/500 => Train Loss: 3.2080, Val Loss: 2.3367, Best Loss: 2.3003, SMAPE (T/V): 39.88/35.90, MAPE_safe (T/V): 60.68/50.34, Time: 4.47s
+train Epoch 38: 100%|██████████| 118/118 [00:03<00:00, 33.09it/s, Loss=3.1660, SMAPE=39.68%, MAPE_safe=58.81%]
+val Epoch 38: 100%|██████████| 40/40 [00:00<00:00, 43.08it/s, Loss=1.9313, SMAPE=27.44%, MAPE_safe=33.54%]
+Epoch 38/500 => Train Loss: 3.1743, Val Loss: 2.3331, Best Loss: 2.3003, SMAPE (T/V): 39.83/35.86, MAPE_safe (T/V): 59.21/51.38, Time: 4.50s
+train Epoch 39: 100%|██████████| 118/118 [00:03<00:00, 33.08it/s, Loss=3.0666, SMAPE=38.79%, MAPE_safe=55.04%]
+val Epoch 39: 100%|██████████| 40/40 [00:00<00:00, 42.80it/s, Loss=1.7699, SMAPE=23.83%, MAPE_safe=25.66%]
+Epoch 39/500 => Train Loss: 3.0578, Val Loss: 2.3325, Best Loss: 2.3003, SMAPE (T/V): 39.64/36.06, MAPE_safe (T/V): 58.71/50.81, Time: 4.51s
+train Epoch 40: 100%|██████████| 118/118 [00:04<00:00, 27.59it/s, Loss=2.7874, SMAPE=42.39%, MAPE_safe=61.47%]
+val Epoch 40: 100%|██████████| 40/40 [00:00<00:00, 43.05it/s, Loss=1.6440, SMAPE=22.91%, MAPE_safe=23.00%]
+Epoch 40/500 => Train Loss: 3.0623, Val Loss: 2.3212, Best Loss: 2.3003, SMAPE (T/V): 39.74/36.99, MAPE_safe (T/V): 57.89/53.00, Time: 5.21s
+train Epoch 41: 100%|██████████| 118/118 [00:03<00:00, 33.05it/s, Loss=2.1528, SMAPE=39.74%, MAPE_safe=57.28%]
+val Epoch 41: 100%|██████████| 40/40 [00:00<00:00, 42.97it/s, Loss=1.5008, SMAPE=23.41%, MAPE_safe=22.32%]
+Epoch 41/500 => Train Loss: 3.0804, Val Loss: 2.3190, Best Loss: 2.3003, SMAPE (T/V): 40.18/37.62, MAPE_safe (T/V): 57.77/53.38, Time: 4.50s
+train Epoch 42: 100%|██████████| 118/118 [00:03<00:00, 33.06it/s, Loss=3.2839, SMAPE=38.96%, MAPE_safe=57.08%]
+val Epoch 42: 100%|██████████| 40/40 [00:00<00:00, 42.66it/s, Loss=1.4910, SMAPE=23.60%, MAPE_safe=22.47%]
+Epoch 42/500 => Train Loss: 2.9837, Val Loss: 2.3112, Best Loss: 2.3003, SMAPE (T/V): 40.22/37.56, MAPE_safe (T/V): 57.57/54.41, Time: 4.51s
+train Epoch 43: 100%|██████████| 118/118 [00:03<00:00, 33.04it/s, Loss=2.8425, SMAPE=37.76%, MAPE_safe=55.32%]
+val Epoch 43: 100%|██████████| 40/40 [00:00<00:00, 43.02it/s, Loss=1.4477, SMAPE=24.53%, MAPE_safe=23.20%]
+Epoch 43/500 => Train Loss: 2.9831, Val Loss: 2.3220, Best Loss: 2.3003, SMAPE (T/V): 39.79/37.77, MAPE_safe (T/V): 58.50/54.28, Time: 4.51s
+train Epoch 44: 100%|██████████| 118/118 [00:03<00:00, 33.14it/s, Loss=2.9568, SMAPE=41.07%, MAPE_safe=56.59%]
+val Epoch 44: 100%|██████████| 40/40 [00:00<00:00, 42.77it/s, Loss=1.4241, SMAPE=25.09%, MAPE_safe=23.63%]
+Epoch 44/500 => Train Loss: 2.9702, Val Loss: 2.3343, Best Loss: 2.3003, SMAPE (T/V): 40.15/38.17, MAPE_safe (T/V): 57.76/52.58, Time: 4.50s
+train Epoch 45: 100%|██████████| 118/118 [00:03<00:00, 33.15it/s, Loss=3.3189, SMAPE=41.81%, MAPE_safe=57.90%]
+val Epoch 45: 100%|██████████| 40/40 [00:00<00:00, 42.72it/s, Loss=1.3818, SMAPE=26.84%, MAPE_safe=25.11%]
+Epoch 45/500 => Train Loss: 2.9386, Val Loss: 2.3361, Best Loss: 2.3003, SMAPE (T/V): 40.57/38.44, MAPE_safe (T/V): 57.86/52.58, Time: 4.50s
+train Epoch 46: 100%|██████████| 118/118 [00:03<00:00, 33.08it/s, Loss=3.2133, SMAPE=40.86%, MAPE_safe=56.69%]
+val Epoch 46: 100%|██████████| 40/40 [00:00<00:00, 42.96it/s, Loss=1.3570, SMAPE=29.06%, MAPE_safe=27.11%]
+Epoch 46/500 => Train Loss: 2.9199, Val Loss: 2.3366, Best Loss: 2.3003, SMAPE (T/V): 40.52/38.71, MAPE_safe (T/V): 57.79/52.91, Time: 4.50s
+train Epoch 47: 100%|██████████| 118/118 [00:03<00:00, 33.30it/s, Loss=2.4335, SMAPE=38.07%, MAPE_safe=51.21%]
+val Epoch 47: 100%|██████████| 40/40 [00:00<00:00, 43.11it/s, Loss=1.3495, SMAPE=29.93%, MAPE_safe=27.87%]
+Epoch 47/500 => Train Loss: 2.9016, Val Loss: 2.3628, Best Loss: 2.3003, SMAPE (T/V): 40.73/38.91, MAPE_safe (T/V): 58.22/51.24, Time: 4.48s
+train Epoch 48: 100%|██████████| 118/118 [00:03<00:00, 33.24it/s, Loss=2.8402, SMAPE=40.89%, MAPE_safe=56.90%]
+val Epoch 48: 100%|██████████| 40/40 [00:00<00:00, 43.05it/s, Loss=1.3410, SMAPE=31.15%, MAPE_safe=28.91%]
+Epoch 48/500 => Train Loss: 2.9061, Val Loss: 2.3402, Best Loss: 2.3003, SMAPE (T/V): 40.83/38.80, MAPE_safe (T/V): 57.83/52.42, Time: 4.48s
+train Epoch 49: 100%|██████████| 118/118 [00:04<00:00, 27.63it/s, Loss=3.4276, SMAPE=43.06%, MAPE_safe=59.15%]
+val Epoch 49: 100%|██████████| 40/40 [00:00<00:00, 43.03it/s, Loss=1.3355, SMAPE=32.26%, MAPE_safe=29.84%]
+Epoch 49/500 => Train Loss: 2.8810, Val Loss: 2.3478, Best Loss: 2.3003, SMAPE (T/V): 40.70/39.18, MAPE_safe (T/V): 58.50/53.22, Time: 5.20s
+train Epoch 50: 100%|██████████| 118/118 [00:03<00:00, 33.26it/s, Loss=2.4814, SMAPE=39.02%, MAPE_safe=53.67%]
+val Epoch 50: 100%|██████████| 40/40 [00:00<00:00, 42.64it/s, Loss=1.3436, SMAPE=30.73%, MAPE_safe=28.56%]
+Epoch 50/500 => Train Loss: 2.8816, Val Loss: 2.3281, Best Loss: 2.3003, SMAPE (T/V): 41.01/38.76, MAPE_safe (T/V): 58.07/53.77, Time: 4.49s
+train Epoch 51: 100%|██████████| 118/118 [00:03<00:00, 33.10it/s, Loss=3.5735, SMAPE=45.15%, MAPE_safe=89.02%]
+val Epoch 51: 100%|██████████| 40/40 [00:00<00:00, 42.95it/s, Loss=2.5296, SMAPE=39.71%, MAPE_safe=67.30%] 
+Epoch 51/500 => Train Loss: 2.9232, Val Loss: 2.4516, Best Loss: 2.3003, SMAPE (T/V): 40.66/37.47, MAPE_safe (T/V): 59.41/70.27, Time: 4.50s
+train Epoch 52: 100%|██████████| 118/118 [00:03<00:00, 32.93it/s, Loss=3.6098, SMAPE=42.54%, MAPE_safe=60.14%]
+val Epoch 52: 100%|██████████| 40/40 [00:00<00:00, 43.01it/s, Loss=1.4121, SMAPE=25.40%, MAPE_safe=23.86%]
+Epoch 52/500 => Train Loss: 3.3257, Val Loss: 2.3171, Best Loss: 2.3003, SMAPE (T/V): 40.70/36.84, MAPE_safe (T/V): 62.63/52.28, Time: 4.52s
+train Epoch 53: 100%|██████████| 118/118 [00:03<00:00, 33.25it/s, Loss=3.0580, SMAPE=41.62%, MAPE_safe=60.15%]
+val Epoch 53: 100%|██████████| 40/40 [00:00<00:00, 42.73it/s, Loss=1.4128, SMAPE=25.39%, MAPE_safe=23.85%]
+Epoch 53/500 => Train Loss: 3.0817, Val Loss: 2.3061, Best Loss: 2.3003, SMAPE (T/V): 40.24/37.62, MAPE_safe (T/V): 58.85/53.97, Time: 4.49s
+train Epoch 54: 100%|██████████| 118/118 [00:03<00:00, 33.07it/s, Loss=3.8205, SMAPE=42.79%, MAPE_safe=59.08%]
+val Epoch 54: 100%|██████████| 40/40 [00:00<00:00, 43.03it/s, Loss=1.3608, SMAPE=28.67%, MAPE_safe=26.77%]
+Epoch 54/500 => Train Loss: 2.9357, Val Loss: 2.3169, Best Loss: 2.3003, SMAPE (T/V): 40.60/38.69, MAPE_safe (T/V): 58.77/55.47, Time: 4.50s
+train Epoch 55: 100%|██████████| 118/118 [00:03<00:00, 32.97it/s, Loss=3.0655, SMAPE=41.99%, MAPE_safe=61.30%]
+val Epoch 55: 100%|██████████| 40/40 [00:00<00:00, 43.06it/s, Loss=1.3329, SMAPE=33.09%, MAPE_safe=30.52%]
+Epoch 55/500 => Train Loss: 2.9289, Val Loss: 2.3301, Best Loss: 2.3003, SMAPE (T/V): 40.88/39.57, MAPE_safe (T/V): 58.62/57.29, Time: 4.51s
+train Epoch 56: 100%|██████████| 118/118 [00:03<00:00, 33.29it/s, Loss=2.9984, SMAPE=40.44%, MAPE_safe=56.34%]
+val Epoch 56: 100%|██████████| 40/40 [00:00<00:00, 42.96it/s, Loss=1.3335, SMAPE=32.87%, MAPE_safe=30.34%]
+Epoch 56/500 => Train Loss: 2.9053, Val Loss: 2.3320, Best Loss: 2.3003, SMAPE (T/V): 41.05/39.23, MAPE_safe (T/V): 58.84/54.57, Time: 4.48s
+train Epoch 57: 100%|██████████| 118/118 [00:03<00:00, 33.10it/s, Loss=2.8201, SMAPE=41.12%, MAPE_safe=66.57%]
+val Epoch 57: 100%|██████████| 40/40 [00:00<00:00, 42.96it/s, Loss=1.3344, SMAPE=32.57%, MAPE_safe=30.09%]
+Epoch 57/500 => Train Loss: 2.8984, Val Loss: 2.3259, Best Loss: 2.3003, SMAPE (T/V): 40.94/39.99, MAPE_safe (T/V): 58.84/63.07, Time: 4.50s
+train Epoch 58: 100%|██████████| 118/118 [00:03<00:00, 33.09it/s, Loss=2.9386, SMAPE=42.69%, MAPE_safe=58.21%]
+val Epoch 58: 100%|██████████| 40/40 [00:00<00:00, 42.66it/s, Loss=1.3316, SMAPE=33.80%, MAPE_safe=31.09%]
+Epoch 58/500 => Train Loss: 2.8695, Val Loss: 2.3257, Best Loss: 2.3003, SMAPE (T/V): 41.12/39.52, MAPE_safe (T/V): 58.59/57.11, Time: 4.51s
+train Epoch 59: 100%|██████████| 118/118 [00:04<00:00, 27.52it/s, Loss=3.2921, SMAPE=42.38%, MAPE_safe=55.81%]
+val Epoch 59: 100%|██████████| 40/40 [00:00<00:00, 42.97it/s, Loss=1.3319, SMAPE=33.60%, MAPE_safe=30.93%]
+Epoch 59/500 => Train Loss: 2.8568, Val Loss: 2.3233, Best Loss: 2.3003, SMAPE (T/V): 41.17/39.33, MAPE_safe (T/V): 58.70/55.58, Time: 5.22s
+train Epoch 60: 100%|██████████| 118/118 [00:03<00:00, 33.15it/s, Loss=3.5325, SMAPE=43.78%, MAPE_safe=55.24%]
+val Epoch 60: 100%|██████████| 40/40 [00:00<00:00, 42.77it/s, Loss=1.3317, SMAPE=35.06%, MAPE_safe=32.08%]
+Epoch 60/500 => Train Loss: 2.8603, Val Loss: 2.3984, Best Loss: 2.3003, SMAPE (T/V): 41.17/39.64, MAPE_safe (T/V): 59.05/50.43, Time: 4.50s
+train Epoch 61: 100%|██████████| 118/118 [00:03<00:00, 33.12it/s, Loss=2.8940, SMAPE=41.34%, MAPE_safe=60.02%]
+val Epoch 61: 100%|██████████| 40/40 [00:00<00:00, 42.80it/s, Loss=1.3313, SMAPE=34.51%, MAPE_safe=31.65%]
+Epoch 61/500 => Train Loss: 2.8629, Val Loss: 2.3185, Best Loss: 2.3003, SMAPE (T/V): 41.21/39.39, MAPE_safe (T/V): 58.58/56.46, Time: 4.50s
+train Epoch 62: 100%|██████████| 118/118 [00:03<00:00, 33.10it/s, Loss=2.8678, SMAPE=42.13%, MAPE_safe=59.89%]
+val Epoch 62: 100%|██████████| 40/40 [00:00<00:00, 42.93it/s, Loss=1.3313, SMAPE=34.52%, MAPE_safe=31.66%]
+Epoch 62/500 => Train Loss: 2.8602, Val Loss: 2.3119, Best Loss: 2.3003, SMAPE (T/V): 41.08/39.33, MAPE_safe (T/V): 58.57/58.15, Time: 4.50s
+train Epoch 63: 100%|██████████| 118/118 [00:03<00:00, 33.25it/s, Loss=2.6930, SMAPE=41.06%, MAPE_safe=60.22%]
+val Epoch 63: 100%|██████████| 40/40 [00:00<00:00, 43.00it/s, Loss=1.3334, SMAPE=35.90%, MAPE_safe=32.73%]
+Epoch 63/500 => Train Loss: 2.8537, Val Loss: 2.3200, Best Loss: 2.3003, SMAPE (T/V): 41.18/39.47, MAPE_safe (T/V): 58.61/56.23, Time: 4.48s
+train Epoch 64: 100%|██████████| 118/118 [00:03<00:00, 33.26it/s, Loss=2.6687, SMAPE=40.30%, MAPE_safe=61.24%]
+val Epoch 64: 100%|██████████| 40/40 [00:00<00:00, 42.73it/s, Loss=1.3352, SMAPE=36.42%, MAPE_safe=33.13%] 
+Epoch 64/500 => Train Loss: 2.8502, Val Loss: 2.3327, Best Loss: 2.3003, SMAPE (T/V): 41.08/40.71, MAPE_safe (T/V): 58.42/66.31, Time: 4.49s
+train Epoch 65: 100%|██████████| 118/118 [00:03<00:00, 33.10it/s, Loss=2.5720, SMAPE=38.94%, MAPE_safe=59.24%]
+val Epoch 65: 100%|██████████| 40/40 [00:00<00:00, 43.04it/s, Loss=1.3316, SMAPE=34.98%, MAPE_safe=32.02%]
+Epoch 65/500 => Train Loss: 2.8615, Val Loss: 2.3183, Best Loss: 2.3003, SMAPE (T/V): 41.18/39.80, MAPE_safe (T/V): 59.02/60.25, Time: 4.50s
+train Epoch 66: 100%|██████████| 118/118 [00:03<00:00, 32.97it/s, Loss=3.0264, SMAPE=43.50%, MAPE_safe=66.24%]
+val Epoch 66: 100%|██████████| 40/40 [00:00<00:00, 43.00it/s, Loss=1.3313, SMAPE=34.19%, MAPE_safe=31.39%]
+Epoch 66/500 => Train Loss: 2.8483, Val Loss: 2.3145, Best Loss: 2.3003, SMAPE (T/V): 41.25/39.66, MAPE_safe (T/V): 58.71/59.44, Time: 4.51s
+train Epoch 67: 100%|██████████| 118/118 [00:03<00:00, 33.22it/s, Loss=2.8544, SMAPE=42.24%, MAPE_safe=62.79%]
+val Epoch 67: 100%|██████████| 40/40 [00:00<00:00, 42.61it/s, Loss=1.3334, SMAPE=35.89%, MAPE_safe=32.73%]
+Epoch 67/500 => Train Loss: 2.8489, Val Loss: 2.3181, Best Loss: 2.3003, SMAPE (T/V): 41.20/39.79, MAPE_safe (T/V): 58.64/59.91, Time: 4.50s
+train Epoch 68: 100%|██████████| 118/118 [00:03<00:00, 33.12it/s, Loss=3.3512, SMAPE=43.22%, MAPE_safe=59.48%]
+val Epoch 68: 100%|██████████| 40/40 [00:00<00:00, 42.79it/s, Loss=1.3359, SMAPE=36.59%, MAPE_safe=33.25%]
+Epoch 68/500 => Train Loss: 2.8409, Val Loss: 2.3208, Best Loss: 2.3003, SMAPE (T/V): 41.17/39.54, MAPE_safe (T/V): 58.45/57.01, Time: 4.50s
+train Epoch 69: 100%|██████████| 118/118 [00:04<00:00, 27.39it/s, Loss=3.0471, SMAPE=41.99%, MAPE_safe=60.91%]
+val Epoch 69: 100%|██████████| 40/40 [00:00<00:00, 42.96it/s, Loss=1.3394, SMAPE=31.44%, MAPE_safe=29.15%]
+[INFO] Early stopping triggered after 69 epochs
+[INFO] Best validation loss: 2.3003
+Training complete in 5m 25s, best val loss: 2.3003

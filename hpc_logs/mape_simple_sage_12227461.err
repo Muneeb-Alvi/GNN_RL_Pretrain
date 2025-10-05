@@ -1,0 +1,6 @@
+Loading module 'cuda/11.8.0'
+Loading module 'gcc/9.2.0'
+
+Loading [1mcuda/11.8.0[22m
+  [94mLoading requirement[0m: gcc/9.2.0
+slurmstepd: error: *** JOB 12227461 ON dn011 CANCELLED AT 2025-10-05T20:00:11 ***

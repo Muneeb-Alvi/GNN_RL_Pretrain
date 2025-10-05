@@ -1,0 +1,19 @@
+[INFO] Loading all .pt files directly from folder...
+[WARNING] No .pt files found in folder. Dataset may be empty.
+[WARNING] Mismatch between .pt files (0) and metadata (60305)
+[INFO] Loading all .pt files directly from folder...
+[WARNING] No .pt files found in folder. Dataset may be empty.
+[WARNING] Mismatch between .pt files (0) and metadata (19978)
+Error executing job with overrides: ['model.name=SimpleGraphSAGE', 'model.input_size=17', 'experiment.name=SimpleGraphSAGE_old_data_utils_test', 'training.lr=0.001', 'training.max_epochs=500', 'training.training_gpu=cuda:0', 'training.validation_gpu=cuda:0', 'data_generation.batch_size=512', 'data_generation.just_load_pickled=true', 'wandb.use_wandb=true']
+Traceback (most recent call last):
+  File "/scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py", line 74, in main
+    train_loader = DataLoader(
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/loader/dataloader.py", line 87, in __init__
+    super().__init__(
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 376, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch/utils/data/sampler.py", line 164, in __init__
+    raise ValueError(
+ValueError: num_samples should be a positive integer value, but got num_samples=0
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

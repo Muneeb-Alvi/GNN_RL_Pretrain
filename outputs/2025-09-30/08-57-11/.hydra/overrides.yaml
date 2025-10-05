@@ -1,0 +1,9 @@
+- model.name=ResidualGIN
+- experiment.name=ResidualGIN_enhanced_lr002_bs256
+- training.lr=0.002
+- training.max_epochs=500
+- training.training_gpu=cuda:0
+- training.validation_gpu=cuda:0
+- data_generation.batch_size=512
+- data_generation.just_load_pickled=true
+- wandb.use_wandb=true

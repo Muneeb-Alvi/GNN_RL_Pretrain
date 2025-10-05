@@ -1,0 +1,7 @@
+- model.name=DeepGraphSAGE
+- experiment.name=DeepGraphSAGE
+- training.lr=0.0003
+- training.max_epochs=500
+- training.training_gpu=cuda:0
+- training.validation_gpu=cuda:0
+- data_generation.just_load_pickled=true

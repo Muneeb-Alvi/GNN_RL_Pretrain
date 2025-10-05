@@ -1,0 +1,80 @@
+{
+  "os": "Linux-4.18.0-513.5.1.el8_9.x86_64-x86_64-with-glibc2.28",
+  "python": "CPython 3.10.18",
+  "startedAt": "2025-09-10T05:51:49.531405Z",
+  "args": [
+    "model.name=DeepGraphSAGE",
+    "experiment.name=deep_sage_experiment",
+    "training.training_gpu=cuda:0",
+    "training.validation_gpu=cuda:0"
+  ],
+  "program": "/scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py",
+  "codePath": "train_model_gnn.py",
+  "git": {
+    "remote": "https://github.com/Muneeb-Alvi/GNN_RL_Pretrain.git",
+    "commit": "7f28bb5aa1e3fa66fac59142efe45bf266427661"
+  },
+  "email": "maa9509@nyu.edu",
+  "root": "/scratch/maa9509/GNN_RL_Pretrain/outputs/2025-09-10/09-51-48",
+  "host": "cn006",
+  "executable": "/home/maa9509/.conda/envs/rl_pretrain/bin/python",
+  "cpu_count": 128,
+  "cpu_count_logical": 128,
+  "gpu": "NVIDIA A100-PCIE-40GB",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "10737418240",
+      "used": "5459329024"
+    }
+  },
+  "memory": {
+    "total": "539903246336"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100-PCIE-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-fbeab415-ebeb-f81f-e911-f06ea088365d"
+    }
+  ],
+  "cudaVersion": "12.2",
+  "slurm": {
+    "cluster_name": "hpc",
+    "conf": "/opt/slurm/etc/slurm.conf",
+    "cpus_on_node": "10",
+    "cpus_per_task": "10",
+    "gtids": "0",
+    "job_account": "students",
+    "job_cpus_per_node": "10",
+    "job_gid": "100",
+    "job_gpus": "0",
+    "job_id": "12038674",
+    "job_name": "test_job.sh",
+    "job_nodelist": "cn006",
+    "job_num_nodes": "1",
+    "job_partition": "nvidia",
+    "job_qos": "nvidias",
+    "job_uid": "3854509",
+    "job_user": "maa9509",
+    "jobid": "12038674",
+    "localid": "0",
+    "mem_per_node": "262144",
+    "nnodes": "1",
+    "node_aliases": "(null)",
+    "nodeid": "0",
+    "nodelist": "cn006",
+    "prio_process": "0",
+    "procid": "0",
+    "submit_dir": "/scratch/maa9509/GNN_RL_Pretrain",
+    "submit_host": "dn380",
+    "task_pid": "1282206",
+    "tasks_per_node": "1",
+    "topology_addr": "cn-spine.leaf03.cn006",
+    "topology_addr_pattern": "switch.switch.node",
+    "working_cluster": "hpc:slurm:6816:9216:109"
+  },
+  "writerId": "dbei1npkr873ijppgevan036ku6lforn"
+}

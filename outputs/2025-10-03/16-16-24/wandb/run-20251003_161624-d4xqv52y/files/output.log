@@ -1,0 +1,23 @@
+/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+[Baseline] Val MAPE if pred==1.0: 2025.6104%
+train Epoch 1: 100%|██████████| 118/118 [00:03<00:00, 35.40it/s, loss=1.69]
+[Diag][train] y(mean/min/max)=(3.9081/0.0003/169.4619) out(mean/min/max)=(-0.4482/-1.4464/0.4323)
+[Diag][train] y(mean/min/max)=(2.3966/0.0004/53.2293) out(mean/min/max)=(1.7491/0.2425/2.7905)
+[Diag][train] y(mean/min/max)=(3.6367/0.0006/97.8237) out(mean/min/max)=(0.3913/-0.4242/1.6207)
+[Diag][train] y(mean/min/max)=(4.1534/0.0001/82.3334) out(mean/min/max)=(1.0554/0.0876/2.1158)
+val Epoch 1: 100%|██████████| 40/40 [00:00<00:00, 52.23it/s, loss=3.76] 
+[Diag][val] y(mean/min/max)=(1.1238/0.0010/18.3122) out(mean/min/max)=(1.3286/0.6479/1.5603)
+[Diag][val] y(mean/min/max)=(4.9788/0.0010/42.8901) out(mean/min/max)=(1.2731/0.6479/1.5528)
+[Diag][val] y(mean/min/max)=(1.5363/0.0010/25.2232) out(mean/min/max)=(1.4959/1.3499/1.5491)
+[Diag][val] y(mean/min/max)=(1.7545/0.0010/32.9535) out(mean/min/max)=(1.4950/0.7130/1.5491)
+[INFO] New best model saved with val_mape_safe: 56.0711%
+Epoch 1/500 => Train Loss: 1.7659, Val Loss: 1.4411, Best Loss: 1.4411, SMAPE (T/V): 81.30/74.67, MAPE_safe (T/V): 61.12/56.07, Best MAPE_safe: 56.07%, Time: 4.28s
+train Epoch 2: 100%|██████████| 118/118 [00:03<00:00, 31.08it/s, loss=1.77]
+val Epoch 2: 100%|██████████| 40/40 [00:00<00:00, 52.88it/s, loss=3.36] 
+Epoch 2/500 => Train Loss: 1.6372, Val Loss: 1.4195, Best Loss: 1.4195, SMAPE (T/V): 79.62/76.44, MAPE_safe (T/V): 60.22/65.30, Best MAPE_safe: 56.07%, Time: 4.56s
+train Epoch 3: 100%|██████████| 118/118 [00:02<00:00, 39.40it/s, loss=1.81]
+val Epoch 3: 100%|██████████| 40/40 [00:00<00:00, 52.74it/s, loss=4.72] 
+[INFO] New best model saved with val_mape_safe: 47.3247%
+Epoch 3/500 => Train Loss: 1.5855, Val Loss: 1.5335, Best Loss: 1.4195, SMAPE (T/V): 79.36/71.01, MAPE_safe (T/V): 60.55/47.32, Best MAPE_safe: 47.32%, Time: 3.77s
+train Epoch 4:  88%|████████▊ | 104/118 [00:02<00:00, 39.27it/s, loss=1.39]

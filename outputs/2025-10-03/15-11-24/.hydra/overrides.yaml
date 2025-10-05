@@ -1,0 +1,7 @@
+- model.name=PearlGATv2
+- model.input_size=17
+- model.hidden_size=256
+- experiment.name=PearlGATv2_mape_early_stop
+- data_generation.batch_size=512
+- data_generation.just_load_pickled=true
+- wandb.use_wandb=true

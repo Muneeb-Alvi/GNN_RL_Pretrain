@@ -1,0 +1,6 @@
+{"time":"2025-10-05T21:00:18.437690218+04:00","level":"INFO","msg":"stream: starting","core version":"0.21.3"}
+{"time":"2025-10-05T21:00:18.840856252+04:00","level":"INFO","msg":"stream: created new stream","id":"juzoruz9"}
+{"time":"2025-10-05T21:00:18.840957391+04:00","level":"INFO","msg":"stream: started","id":"juzoruz9"}
+{"time":"2025-10-05T21:00:18.840976708+04:00","level":"INFO","msg":"handler: started","stream_id":"juzoruz9"}
+{"time":"2025-10-05T21:00:18.840975385+04:00","level":"INFO","msg":"writer: started","stream_id":"juzoruz9"}
+{"time":"2025-10-05T21:00:18.8409938+04:00","level":"INFO","msg":"sender: started","stream_id":"juzoruz9"}

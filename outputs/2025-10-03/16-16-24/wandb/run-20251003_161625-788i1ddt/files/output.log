@@ -1,0 +1,17 @@
+/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+[Baseline] Val MAPE if pred==1.0: 2025.6104%
+train Epoch 1: 100%|██████████| 118/118 [00:03<00:00, 31.97it/s, loss=1.55]
+[Diag][train] y(mean/min/max)=(4.1934/0.0002/168.2444) out(mean/min/max)=(1.5653/-1.3250/3.8112)
+[Diag][train] y(mean/min/max)=(3.5417/0.0009/111.2462) out(mean/min/max)=(5.5167/0.7970/8.4037)
+[Diag][train] y(mean/min/max)=(3.6832/0.0002/102.8856) out(mean/min/max)=(1.5481/-1.6639/3.9523)
+[Diag][train] y(mean/min/max)=(3.2421/0.0008/103.0992) out(mean/min/max)=(2.0513/-0.2298/3.9966)
+val Epoch 1: 100%|██████████| 40/40 [00:00<00:00, 45.16it/s, loss=4.53] 
+[Diag][val] y(mean/min/max)=(1.1238/0.0010/18.3122) out(mean/min/max)=(1.0791/0.5175/1.2032)
+[Diag][val] y(mean/min/max)=(4.9788/0.0010/42.8901) out(mean/min/max)=(1.0253/0.5199/1.2002)
+[Diag][val] y(mean/min/max)=(1.5363/0.0010/25.2232) out(mean/min/max)=(1.1445/1.0826/1.1987)
+[Diag][val] y(mean/min/max)=(1.7545/0.0010/32.9535) out(mean/min/max)=(1.1667/0.6589/1.1987)
+[INFO] New best model saved with val_mape_safe: 50.2162%
+Epoch 1/500 => Train Loss: 1.7778, Val Loss: 1.5583, Best Loss: 1.5583, SMAPE (T/V): 82.12/76.57, MAPE_safe (T/V): 67.08/50.22, Best MAPE_safe: 50.22%, Time: 4.78s
+train Epoch 2: 100%|██████████| 118/118 [00:04<00:00, 28.71it/s, loss=1.57]
+val Epoch 2:  75%|███████▌  | 30/40 [00:00<00:00, 44.80it/s, loss=1.39] 

@@ -1,0 +1,54 @@
+experiment:
+    name: "cost_model_experiment"
+    base_path: "/scratch/maa9509/GNN_RL_Pretrain"
+
+data_generation:
+    ### 1 Million dataset + 250k validation subset
+    train_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/small_dataset/train_data_sample_500-programs_60k-schedules.pkl"
+    valid_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/small_dataset/val_data_sample_125-programs_20k-schedules.pkl"
+    ## El kindi path
+    # train_dataset_file: "/data/mm12191/datasets/LOOPer_dataset_pickles/LOOPer_dataset_train.pkl"
+    # valid_dataset_file: "/data/mm12191/datasets/LOOPer_dataset_pickles/LOOPer_dataset_val.pkl"
+    batch_size: 512  # Larger batch size for more stable gradients
+    nb_processes: 4
+    just_load_pickled: true   # Use existing pickles for now, will fix later
+    min_functions_per_tree_footprint: 2
+
+training:
+    log_file: "logs-gnn.txt"
+    lr: 0.0015  # Higher learning rate for better initial learning
+    max_epochs: 500
+    training_gpu: "cuda:0" # Adjust if you want to use a different GPU
+    validation_gpu: "cuda:0"
+    continue_training: False
+    model_weights_path: "cost_model/checkpoints/best_model_gnn.pth"
+
+testing:
+    testing_model_weights_path: "cost_model/checkpoints/best_model_gnn.pth"
+    gpu: "cuda:0"
+
+wandb:
+    use_wandb: True
+    project: "release_model"
+
+model:
+    name: "DeepGraphSAGE"   # Options: SimpleGraphSAGE, DeepGraphSAGE, SimpleGAT, SimpleGCN, ResidualGIN
+    input_size: 17    # 17D features (old_data_utils includes exec time by default) 
+    hidden_sizes:       # GNN architecture typically uses hidden layers like these
+        - 512
+        - 256
+        - 128
+    hidden_size: 256
+    gnn_layers:
+        - "GCNConv"
+        - "GATConv"
+        - "global_mean_pool"
+    drops:
+        - 0.050
+        - 0.050
+        - 0.050
+        - 0.050
+        - 0.050
+
+defaults:
+  - override hydra/job_logging: disabled

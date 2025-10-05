@@ -1,0 +1,27 @@
+/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+Error executing job with overrides: ['model.name=SimpleGraphSAGE', 'model.input_size=17', 'experiment.name=SimpleGraphSAGE_1M_dataset', 'training.lr=0.001', 'training.max_epochs=500', 'training.training_gpu=cuda:0', 'training.validation_gpu=cuda:0', 'data_generation.batch_size=512', 'data_generation.just_load_pickled=true', 'wandb.use_wandb=true']
+Traceback (most recent call last):
+  File "/scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py", line 138, in main
+    best_mape_safe, best_model_state = train_gnn_model(
+  File "/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/train_utils.py", line 63, in train_gnn_model
+    for batch in dataloader_dict[phase]:
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/loader/dataloader.py", line 47, in __call__
+    return [self(s) for s in zip(*batch)]
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/loader/dataloader.py", line 47, in <listcomp>
+    return [self(s) for s in zip(*batch)]
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/loader/dataloader.py", line 47, in __call__
+    return [self(s) for s in zip(*batch)]
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/loader/dataloader.py", line 47, in <listcomp>
+    return [self(s) for s in zip(*batch)]
+  File "/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/loader/dataloader.py", line 37, in __call__
+    return torch.tensor(batch, dtype=torch.float)
+TypeError: must be real number, not str
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

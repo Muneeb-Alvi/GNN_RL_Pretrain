@@ -1,0 +1,1 @@
+{"_wandb":{"runtime":441},"train_loss":101.25024831670798,"val_loss":98.66690252817529,"val_mape_safe":83.59425650617717,"_timestamp":1.7596838419102786e+09,"_step":69,"train_smape":97.51018861201794,"epoch":69,"learning_rate":0.0007047691625072105,"val_smape":98.17789964545106,"_runtime":441,"train_mape_safe":79.3362433160659}

@@ -1,0 +1,12 @@
+{"time":"2025-09-18T10:56:58.181806825+04:00","level":"INFO","msg":"stream: starting","core version":"0.21.3"}
+{"time":"2025-09-18T10:56:58.580087064+04:00","level":"INFO","msg":"stream: created new stream","id":"3uc1ucgy"}
+{"time":"2025-09-18T10:56:58.580170981+04:00","level":"INFO","msg":"stream: started","id":"3uc1ucgy"}
+{"time":"2025-09-18T10:56:58.580181942+04:00","level":"INFO","msg":"sender: started","stream_id":"3uc1ucgy"}
+{"time":"2025-09-18T10:56:58.580234681+04:00","level":"INFO","msg":"handler: started","stream_id":"3uc1ucgy"}
+{"time":"2025-09-18T10:56:58.58026625+04:00","level":"INFO","msg":"writer: started","stream_id":"3uc1ucgy"}
+{"time":"2025-09-18T19:29:44.606237732+04:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maa9509-new-york-university/release_model/3uc1ucgy/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-09-18T21:03:46.158097038+04:00","level":"INFO","msg":"stream: closing","id":"3uc1ucgy"}
+{"time":"2025-09-18T21:03:47.865932166+04:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-18T21:03:48.141239855+04:00","level":"INFO","msg":"handler: closed","stream_id":"3uc1ucgy"}
+{"time":"2025-09-18T21:03:48.141623846+04:00","level":"INFO","msg":"sender: closed","stream_id":"3uc1ucgy"}
+{"time":"2025-09-18T21:03:48.141665304+04:00","level":"INFO","msg":"stream: closed","id":"3uc1ucgy"}

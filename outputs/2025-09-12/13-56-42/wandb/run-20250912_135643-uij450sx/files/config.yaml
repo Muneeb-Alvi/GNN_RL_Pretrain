@@ -1,0 +1,98 @@
+_wandb:
+    value:
+        cli_version: 0.21.3
+        e:
+            7t78mmz3jsxaq9asau5cvgq9jbjglm9z:
+                args:
+                    - model.name=SimpleGraphSAGE
+                    - experiment.name=SimpleGraphSAGE
+                    - training.lr=0.0003
+                    - training.max_epochs=500
+                    - training.training_gpu=cuda:0
+                    - training.validation_gpu=cuda:0
+                    - data_generation.just_load_pickled=true
+                codePath: train_model_gnn.py
+                cpu_count: 40
+                cpu_count_logical: 40
+                cudaVersion: "12.2"
+                disk:
+                    /:
+                        total: "10737418240"
+                        used: "5448798208"
+                email: maa9509@nyu.edu
+                executable: /home/maa9509/.conda/envs/rl_pretrain/bin/python
+                git:
+                    commit: 7f28bb5aa1e3fa66fac59142efe45bf266427661
+                    remote: https://github.com/Muneeb-Alvi/GNN_RL_Pretrain.git
+                gpu: Tesla V100-PCIE-32GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "34359738368"
+                      name: Tesla V100-PCIE-32GB
+                      uuid: GPU-6ae86cfc-af5b-88f5-4f6a-87dac634d13f
+                host: dn004
+                memory:
+                    total: "404863479808"
+                os: Linux-4.18.0-513.5.1.el8_9.x86_64-x86_64-with-glibc2.28
+                program: /scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py
+                python: CPython 3.10.18
+                root: /scratch/maa9509/GNN_RL_Pretrain/outputs/2025-09-12/13-56-42
+                slurm:
+                    cluster_name: hpc
+                    conf: /opt/slurm/etc/slurm.conf
+                    cpus_on_node: "10"
+                    cpus_per_task: "10"
+                    gtids: "0"
+                    job_account: students
+                    job_cpus_per_node: "10"
+                    job_gid: "100"
+                    job_gpus: "0"
+                    job_id: "12047381"
+                    job_name: test_job_simple_sage.sh
+                    job_nodelist: dn004
+                    job_num_nodes: "1"
+                    job_partition: nvidia
+                    job_qos: nvidias
+                    job_uid: "3854509"
+                    job_user: maa9509
+                    jobid: "12047381"
+                    localid: "0"
+                    mem_per_node: "131072"
+                    nnodes: "1"
+                    node_aliases: (null)
+                    nodeid: "0"
+                    nodelist: dn004
+                    prio_process: "0"
+                    procid: "0"
+                    submit_dir: /scratch/maa9509/GNN_RL_Pretrain
+                    submit_host: dn377
+                    task_pid: "3877279"
+                    tasks_per_node: "1"
+                    topology_addr: dn-spine.dn21.dn004
+                    topology_addr_pattern: switch.switch.node
+                    working_cluster: hpc:slurm:6816:9216:109
+                startedAt: "2025-09-12T09:56:43.446056Z"
+                writerId: 7t78mmz3jsxaq9asau5cvgq9jbjglm9z
+        m: []
+        python_version: 3.10.18
+        t:
+            "1":
+                - 1
+                - 5
+                - 50
+                - 53
+                - 77
+            "2":
+                - 1
+                - 5
+                - 50
+                - 53
+                - 77
+            "3":
+                - 13
+            "4": 3.10.18
+            "5": 0.21.3
+            "12": 0.21.3
+            "13": linux-x86_64

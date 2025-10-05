@@ -1,0 +1,4 @@
+- model.name=SimpleGraphSAGE
+- experiment.name=simple_sage_experiment
+- training.training_gpu=cuda:0
+- training.validation_gpu=cuda:0

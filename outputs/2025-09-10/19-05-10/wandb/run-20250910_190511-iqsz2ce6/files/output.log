@@ -1,0 +1,33 @@
+[INFO] Loading all .pt files directly from folder (ignoring .pkl metadata)...
+/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/data_utils.py:280: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  _ = torch.load(pt_file)  # Optional: validate loading
+[INFO] Loading all .pt files directly from folder (ignoring .pkl metadata)...
+/scratch/maa9509/GNN_RL_Pretrain/utils_gnn/data_utils.py:369: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  data = torch.load(data_path)
+[Baseline] Val MAPE if pred==1.0: 2025.6106%
+train Epoch 1:   0%|          | 0/118 [00:00<?, ?it/s]/home/maa9509/.conda/envs/rl_pretrain/lib/python3.10/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+[Diag][train] y(mean/min/max)=(2.9934/0.0005/54.9348) out(mean/min/max)=(1.0000/1.0000/1.0000)
+train Epoch 1: 100%|██████████| 118/118 [00:55<00:00,  2.11it/s, loss=1.34e+3]
+[Diag][train] y(mean/min/max)=(4.2393/0.0007/215.1182) out(mean/min/max)=(0.9979/0.9979/0.9979)
+[Diag][train] y(mean/min/max)=(3.6027/0.0010/127.5277) out(mean/min/max)=(0.9968/0.9968/0.9968)
+[Diag][train] y(mean/min/max)=(3.2633/0.0002/72.7692) out(mean/min/max)=(0.9953/0.9953/0.9953)
+val Epoch 1: 100%|██████████| 40/40 [00:16<00:00,  2.35it/s, loss=36.1]   
+[Diag][val] y(mean/min/max)=(1.5139/0.0001/29.5377) out(mean/min/max)=(0.4930/0.4930/0.4930)
+[Diag][val] y(mean/min/max)=(4.3377/0.0242/27.8551) out(mean/min/max)=(0.5850/0.5850/0.5850)
+[Diag][val] y(mean/min/max)=(0.9643/0.0050/2.4155) out(mean/min/max)=(0.5533/0.5533/0.5533)
+[Diag][val] y(mean/min/max)=(0.9221/0.0003/3.8595) out(mean/min/max)=(0.5090/0.5090/0.5090)
+Epoch 1/5 => Train Loss: 1087.1345, Val Loss: 1204.5728, Best: 1204.5728, Time: 73.02s
+train Epoch 2: 100%|██████████| 118/118 [00:55<00:00,  2.13it/s, loss=289]    
+val Epoch 2: 100%|██████████| 40/40 [00:16<00:00,  2.36it/s, loss=98]     
+Epoch 2/5 => Train Loss: 703.7224, Val Loss: 373.5419, Best: 373.5419, Time: 72.31s
+train Epoch 3: 100%|██████████| 118/118 [00:55<00:00,  2.11it/s, loss=494]    
+val Epoch 3: 100%|██████████| 40/40 [00:17<00:00,  2.34it/s, loss=43.6]   
+Epoch 3/5 => Train Loss: 662.1056, Val Loss: 870.4919, Best: 373.5419, Time: 72.90s
+train Epoch 4: 100%|██████████| 118/118 [00:55<00:00,  2.13it/s, loss=274]   
+val Epoch 4: 100%|██████████| 40/40 [00:16<00:00,  2.37it/s, loss=49.4]   
+Epoch 4/5 => Train Loss: 464.9269, Val Loss: 712.5688, Best: 373.5419, Time: 72.32s
+train Epoch 5: 100%|██████████| 118/118 [00:55<00:00,  2.14it/s, loss=168]   
+val Epoch 5: 100%|██████████| 40/40 [00:17<00:00,  2.34it/s, loss=55.7]   
+Epoch 5/5 => Train Loss: 407.0872, Val Loss: 580.1383, Best: 373.5419, Time: 72.28s
+Training complete in 7m 30s, best val loss: 373.5419

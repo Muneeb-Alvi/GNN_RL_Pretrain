@@ -1,0 +1,7 @@
+- experiment.name=test_early_stopping_fix
+- model.name=SimpleGraphSAGE
+- training.lr=0.002
+- training.max_epochs=50
+- data_generation.batch_size=512
+- data_generation.just_load_pickled=true
+- wandb.use_wandb=false

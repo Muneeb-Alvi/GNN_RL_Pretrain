@@ -1,0 +1,7 @@
+- model.name=PearlGATv2
+- model.input_size=17
+- model.hidden_size=256
+- data_generation.batch_size=512
+- data_generation.just_load_pickled=true
+- experiment.name=PearlGATv2_old_data_utils_test
+- wandb.use_wandb=true

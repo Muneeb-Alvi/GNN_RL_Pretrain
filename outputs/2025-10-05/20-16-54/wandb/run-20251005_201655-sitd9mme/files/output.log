@@ -1,0 +1,7 @@
+Error executing job with overrides: ['model.name=SimpleGraphSAGE', 'model.input_size=17', 'experiment.name=SimpleGraphSAGE_fixed_no_log_transform', 'training.lr=0.001', 'training.max_epochs=500', 'training.training_gpu=cuda:0', 'training.validation_gpu=cuda:0', 'data_generation.batch_size=512', 'data_generation.just_load_pickled=true', 'wandb.use_wandb=true']
+Traceback (most recent call last):
+  File "/scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py", line 89, in main
+    model = SimpleGraphSAGE(
+TypeError: SimpleGraphSAGE.__init__() got an unexpected keyword argument 'log_transform'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

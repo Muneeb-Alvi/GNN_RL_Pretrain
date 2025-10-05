@@ -1,0 +1,42 @@
+experiment:
+  name: PearlGATv2_1M_dataset
+  base_path: /scratch/maa9509/GNN_RL_Pretrain
+data_generation:
+  train_dataset_file: /scratch/maa9509/GNN_RL_Pretrain/datasets/dataset_expr_dataset_batch550000-838143+batch101-1227605_train_part_1_of_22.pkl
+  valid_dataset_file: /scratch/maa9509/GNN_RL_Pretrain/datasets/LOOPer_dataset_val.pkl
+  batch_size: 512
+  nb_processes: 4
+  just_load_pickled: true
+  min_functions_per_tree_footprint: 2
+training:
+  log_file: logs-gnn.txt
+  lr: 0.001
+  max_epochs: 500
+  training_gpu: cuda:0
+  validation_gpu: cuda:0
+  continue_training: false
+  model_weights_path: cost_model/checkpoints/best_model_gnn.pth
+testing:
+  testing_model_weights_path: cost_model/checkpoints/best_model_gnn.pth
+  gpu: cuda:0
+wandb:
+  use_wandb: true
+  project: release_model
+model:
+  name: PearlGATv2
+  input_size: 17
+  hidden_sizes:
+  - 512
+  - 256
+  - 128
+  hidden_size: 256
+  gnn_layers:
+  - GCNConv
+  - GATConv
+  - global_mean_pool
+  drops:
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05

@@ -1,0 +1,10 @@
+- model.name=ResidualGIN
+- model.input_size=17
+- experiment.name=test_80k_fixed_ResidualGIN
+- training.lr=0.001
+- training.max_epochs=50
+- training.training_gpu=cuda:0
+- training.validation_gpu=cuda:0
+- data_generation.batch_size=256
+- data_generation.just_load_pickled=false
+- wandb.use_wandb=false

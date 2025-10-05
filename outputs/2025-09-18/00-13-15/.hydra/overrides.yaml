@@ -1,0 +1,9 @@
+- model.name=DeepGraphSAGE
+- experiment.name=DeepGraphSAGE_improved_lr001_bs256
+- training.lr=0.001
+- training.max_epochs=500
+- training.training_gpu=cuda:0
+- training.validation_gpu=cuda:0
+- data_generation.batch_size=256
+- data_generation.just_load_pickled=true
+- wandb.use_wandb=true

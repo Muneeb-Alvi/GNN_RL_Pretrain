@@ -1,0 +1,8 @@
+Baseline MAPE (const=1.0): Train=92.40%, Val=94.32%
+[INFO] New best model saved with val_loss: 80015.5737
+Epoch 1/500 => Train Loss: 14663.3686, Val Loss: 80015.5737, Best Loss: 80015.5737, SMAPE (T/V): 84.25/70.03, MAPE_safe (T/V): 62.11/93.23, Time: 77.79s
+Epoch 2/500 => Train Loss: 3598.1866, Val Loss: 81028.1199, Best Loss: 80015.5737, SMAPE (T/V): 89.96/70.09, MAPE_safe (T/V): 58.07/94.02, Time: 77.35s
+Epoch 3/500 => Train Loss: 643.0019, Val Loss: 81710.4943, Best Loss: 80015.5737, SMAPE (T/V): 95.74/70.27, MAPE_safe (T/V): 58.39/97.36, Time: 77.43s
+Epoch 4/500 => Train Loss: -148.4186, Val Loss: 81722.4993, Best Loss: 80015.5737, SMAPE (T/V): 98.67/70.59, MAPE_safe (T/V): 61.07/113.21, Time: 77.32s
+Epoch 5/500 => Train Loss: -1536.5673, Val Loss: 81735.0833, Best Loss: 80015.5737, SMAPE (T/V): 98.88/70.95, MAPE_safe (T/V): 67.17/599.67, Time: 77.33s
+Epoch 6/500 => Train Loss: -4393.3780, Val Loss: 110273.3439, Best Loss: 80015.5737, SMAPE (T/V): 99.20/70.96, MAPE_safe (T/V): 76.21/57974.79, Time: 77.48s

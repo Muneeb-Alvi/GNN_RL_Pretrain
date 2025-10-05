@@ -1,0 +1,1 @@
+{"learning_rate":0.00043009379349381286,"val_loss":98.52413788361167,"train_smape":49.71605384807051,"_step":65,"_runtime":351,"train_loss":276.9001659233587,"train_mape_safe":204.49571047720352,"_wandb":{"runtime":351},"epoch":65,"_timestamp":1.7596778333794749e+09,"val_smape":48.173566205877,"val_mape_safe":192.6553576701706}

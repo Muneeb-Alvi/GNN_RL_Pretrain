@@ -1,0 +1,90 @@
+_wandb:
+    value:
+        cli_version: 0.21.3
+        e:
+            nxzgfvxp3xkgbwk0jvfl00vt7wlztg1e:
+                codePath: train_model_gnn.py
+                cpu_count: 64
+                cpu_count_logical: 64
+                cudaVersion: "12.2"
+                disk:
+                    /:
+                        total: "10737418240"
+                        used: "5448622080"
+                email: maa9509@nyu.edu
+                executable: /home/maa9509/.conda/envs/rl_pretrain/bin/python
+                git:
+                    commit: 7f28bb5aa1e3fa66fac59142efe45bf266427661
+                    remote: https://github.com/Muneeb-Alvi/GNN_RL_Pretrain.git
+                gpu: NVIDIA A100-SXM4-80GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A100-SXM4-80GB
+                      uuid: GPU-961b18bf-afed-c4a6-b6c9-ad1b1263d919
+                host: cn265
+                memory:
+                    total: "540069470208"
+                os: Linux-4.18.0-513.5.1.el8_9.x86_64-x86_64-with-glibc2.28
+                program: /scratch/maa9509/GNN_RL_Pretrain/train_model_gnn.py
+                python: CPython 3.10.18
+                root: /scratch/maa9509/GNN_RL_Pretrain/outputs/2025-09-09/16-24-46
+                slurm:
+                    cluster_name: hpc
+                    conf: /opt/slurm/etc/slurm.conf
+                    cpus_on_node: "4"
+                    cpus_per_task: "4"
+                    gtids: "0"
+                    job_account: students
+                    job_cpus_per_node: "4"
+                    job_gid: "100"
+                    job_gpus: "3"
+                    job_id: "12035140"
+                    job_name: test_job.sh
+                    job_nodelist: cn265
+                    job_num_nodes: "1"
+                    job_partition: nvidia
+                    job_qos: nvidias
+                    job_uid: "3854509"
+                    job_user: maa9509
+                    jobid: "12035140"
+                    localid: "0"
+                    mem_per_node: "262144"
+                    nnodes: "1"
+                    node_aliases: (null)
+                    nodeid: "0"
+                    nodelist: cn265
+                    prio_process: "0"
+                    procid: "0"
+                    submit_dir: /scratch/maa9509/GNN_RL_Pretrain
+                    submit_host: login2.fast
+                    task_pid: "2428165"
+                    tasks_per_node: "1"
+                    topology_addr: cn-spine.leaf08.cn265
+                    topology_addr_pattern: switch.switch.node
+                    working_cluster: hpc:slurm:6816:9216:109
+                startedAt: "2025-09-09T12:24:47.160786Z"
+                writerId: nxzgfvxp3xkgbwk0jvfl00vt7wlztg1e
+        m: []
+        python_version: 3.10.18
+        t:
+            "1":
+                - 1
+                - 5
+                - 50
+                - 53
+                - 77
+            "2":
+                - 1
+                - 5
+                - 50
+                - 53
+                - 77
+            "3":
+                - 13
+            "4": 3.10.18
+            "5": 0.21.3
+            "12": 0.21.3
+            "13": linux-x86_64
