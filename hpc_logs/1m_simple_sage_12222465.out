@@ -1,5 +1,0 @@
-Baseline MAPE (const=1.0): Train=46.93%, Val=46.40%
-[INFO] New best model saved with val_loss: 95.2441
-[1;34mwandb[0m: 
-[1;34mwandb[0m: 🚀 View run [33mSimpleGraphSAGE_1M_dataset_SimpleGraphSAGE[0m at: [34mhttps://wandb.ai/maa9509-new-york-university/release_model/runs/ehj9knz6[0m
-[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20251005_010936-ehj9knz6/logs[0m

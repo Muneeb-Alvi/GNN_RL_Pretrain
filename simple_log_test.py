@@ -50,3 +50,6 @@ print(f"Log MSE: {expected_log_mse.item():.4f}")
 print(f"Reduction factor: {expected_regular_mse.item() / expected_log_mse.item():.1f}x")
 
 print(f"\n✅ Log MSE loss should give us loss values in the range 0.01-10 instead of 50-300!")
+
+
+

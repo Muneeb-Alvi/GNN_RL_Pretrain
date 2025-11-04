@@ -5,28 +5,21 @@ import random
 import gc
 import hydra
 from hydra.core.config_store import ConfigStore
-
+from omegaconf import OmegaConf
 import torch
-from torch_geometric.loader import DataLoader
+from torch.utils.data import DataLoader
+import numpy as np
 
-from utils_gnn.train_utils import train_gnn_model, mape_criterion
+from utils_gnn.train_utils import train_gnn_model, mape_criterion, collate_with_attrs
 from utils_gnn.data_utils import GNNDatasetParallel  
-from utils_gnn.modeling import SimpleGCN, SimpleGAT, ResidualGIN
-from torch_geometric.data import Batch
+from utils_gnn.modeling import SimpleGCN, SimpleGAT, ResidualGIN, DeepResidualGAT, PearlGATv2, SimpleGraphSAGE
 
-def collate_with_attrs(batch):
-    """
-    Custom collate function for batching GNN data and accompanying attributes.
-    """
-    data_list, attr_list = zip(*batch)
-    batched_data = Batch.from_data_list(data_list)
-    return batched_data, list(attr_list)
 @hydra.main(config_path="conf", config_name="config-gnn")
 def main(conf):
     log_folder_path = os.path.join(conf.experiment.base_path, "logs/")
     if not os.path.exists(log_folder_path):
         os.makedirs(log_folder_path)
-    log_file = os.path.join(log_folder_path, "gnn_training.log")
+    log_file = os.path.join(log_folder_path, f"{conf.model.name}_{conf.training.lr}.log")
     logging.basicConfig(
         filename=log_file,
         filemode='a',
@@ -38,9 +31,10 @@ def main(conf):
     # Setup wandb
     if conf.wandb.use_wandb:
         import wandb
-        wandb.init(name=f"{conf.experiment.name}_{conf.model.name}", project=conf.wandb.project)
+        run_name = f"{conf.experiment.name}_{conf.model.name}_{conf.training.lr}"
+        wandb.init(name=run_name, project=conf.wandb.project)
         wandb.config = dict(conf)
-
+    
     # Decide on device
     train_device = torch.device(conf.training.training_gpu)
     val_device = torch.device(conf.training.validation_gpu)
@@ -48,17 +42,17 @@ def main(conf):
     # --- 1) Load or create your GNN dataset ---
     gnn_dataset_train = GNNDatasetParallel(
         dataset_filename=conf.data_generation.train_dataset_file,
-        pkl_output_folder="gnn_pickles/train",
+        pkl_output_folder="/scratch/maa9509/GNN_RL_Pretrain/gnn_pickles/train",
         nb_processes=4,
-        device="cuda:1",
+        device=conf.training.training_gpu,
         just_load_pickled=True
     )
 
     gnn_dataset_val = GNNDatasetParallel(
         dataset_filename=conf.data_generation.valid_dataset_file,
-        pkl_output_folder="gnn_pickles/val",
+        pkl_output_folder="/scratch/maa9509/GNN_RL_Pretrain/gnn_pickles/val",
         nb_processes=4,
-        device="cuda:1",
+        device=conf.training.validation_gpu,
         just_load_pickled=True
     )
 
@@ -68,28 +62,77 @@ def main(conf):
         gnn_dataset_train, 
         batch_size=conf.data_generation.batch_size, 
         shuffle=True,
-        collate_fn=collate_with_attrs,
+        num_workers=8,
+        pin_memory=True,
+        collate_fn=collate_with_attrs
     )
     val_loader = DataLoader(
         gnn_dataset_val,
         batch_size=conf.data_generation.batch_size,
         shuffle=False,
-        collate_fn=collate_with_attrs,
+        num_workers=8,
+        pin_memory=True,
+        collate_fn=collate_with_attrs
     )
     dataloaders = {"train": train_loader, "val": val_loader}
-
-    model = ResidualGIN(
-        in_channels=conf.model.input_size,       
-        hidden_channels=conf.model.hidden_size,  
-        out_channels=1
-    )
-
+    if conf.model.name == "SimpleGAT":
+        model = SimpleGAT(
+            in_channels=conf.model.input_size,       # e.g. 16 or 17
+            hidden_channels=conf.model.hidden_size,  # from config
+            out_channels=1
+        )
+    elif conf.model.name == "SimpleGCN":
+        model = SimpleGCN(
+            in_channels=conf.model.input_size,       # e.g. 16 or 17
+            hidden_channels=conf.model.hidden_size,  # from config
+            out_channels=1
+        )
+        logger.info("SIMPLE GAT LOG")
+    elif conf.model.name == "DeepResidualGAT":
+        model = DeepResidualGAT(
+            in_channels=conf.model.input_size,       # e.g. 16 or 17
+            hidden_channels=conf.model.hidden_size,  # from config
+            out_channels=1
+        )
+    elif conf.model.name == "ResidualGIN":
+        model = ResidualGIN(
+            in_channels=conf.model.input_size,       
+            hidden_channels=conf.model.hidden_size,  
+            out_channels=1
+        )
+    elif conf.model.name == "PearlGATv2":
+        model = PearlGATv2(
+            in_channels=conf.model.input_size,
+            hidden_channels=64,
+            num_heads=4,
+            dropout=0.1,
+            out_channels=1
+        )
+    elif conf.model.name == "SimpleGraphSAGE":
+        model = SimpleGraphSAGE(
+            in_channels=conf.model.input_size,
+            hidden_channels=conf.model.hidden_size,
+            out_channels=1
+        )
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=conf.training.lr,
-        weight_decay=1e-2
+        weight_decay=conf.training.get('weight_decay', 1e-2)
     )
+    config_dump = OmegaConf.to_yaml(conf)
+    logger.info("========== Experiment Configuration ==========\n" + config_dump)
+    print("\n=== Dataset Diagnostics ===")
+    sample_data = gnn_dataset_train.data_list[0]
+    print(f"Sample graph: {sample_data.x.shape[0]} nodes, {sample_data.edge_index.shape[1]} edges")
+    print(f"Node features shape: {sample_data.x.shape}")
+    print(f"First 10 node features:\n{sample_data.x[:10]}")
 
+    # Check statistics across first 100 graphs
+    non_zero_counts = []
+    for i in range(min(100, len(gnn_dataset_train.data_list))):
+        data = gnn_dataset_train.data_list[i]
+        non_zero_counts.append((data.x != 0).sum().item())
+    print(f"\nNon-zero features per graph (first 100): mean={np.mean(non_zero_counts):.1f}, std={np.std(non_zero_counts):.1f}")
     best_loss, best_model_state = train_gnn_model(
         config=conf,
         model=model,
@@ -103,7 +146,7 @@ def main(conf):
         train_device=train_device,
         validation_device=val_device,
     )
-
+    
     if best_model_state is not None:
         model.load_state_dict(best_model_state)
 

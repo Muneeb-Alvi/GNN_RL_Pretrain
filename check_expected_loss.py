@@ -48,3 +48,6 @@ print(f"   Given the high variance in speedup data (std ~14.5),")
 print(f"   MSE=98 represents meaningful learning from the baseline of ~218")
 print(f"   But you're right - it's still quite high for practical use")
 
+
+
+

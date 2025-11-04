@@ -6,9 +6,9 @@ import pickle
 import random
 import os
 
-def create_validation_subset():
+def create_validation_subset(target_schedules=250000):
     input_file = "/scratch/maa9509/GNN_RL_Pretrain/datasets/LOOPer_dataset_val.pkl"
-    output_file = "/scratch/maa9509/GNN_RL_Pretrain/datasets/LOOPer_dataset_val_250k.pkl"
+    output_file = f"/scratch/maa9509/GNN_RL_Pretrain/datasets/LOOPer_dataset_val_{target_schedules//1000}k.pkl"
     
     print(f"Loading full validation dataset from: {input_file}")
     with open(input_file, 'rb') as f:
@@ -16,7 +16,7 @@ def create_validation_subset():
     
     print(f"Full dataset contains {len(full_dataset)} programs")
     
-    # Calculate how many samples we'll get with 250k target
+    # Calculate how many samples we'll get with target
     total_schedules = 0
     for prog_name, prog_data in full_dataset.items():
         if "schedules_list" in prog_data:
@@ -24,8 +24,7 @@ def create_validation_subset():
     
     print(f"Full dataset contains ~{total_schedules} total schedules")
     
-    # Calculate what fraction of programs we need to get ~250k schedules
-    target_schedules = 250000
+    # Calculate what fraction of programs we need to get target schedules
     fraction_needed = target_schedules / total_schedules
     programs_needed = int(len(full_dataset) * fraction_needed)
     
@@ -56,7 +55,12 @@ def create_validation_subset():
     return output_file
 
 if __name__ == "__main__":
-    create_validation_subset()
+    import sys
+    target = int(sys.argv[1]) if len(sys.argv) > 1 else 250000
+    create_validation_subset(target)
+
+
+
 
 
 

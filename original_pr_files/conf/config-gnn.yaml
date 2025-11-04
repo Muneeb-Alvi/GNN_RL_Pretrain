@@ -1,0 +1,55 @@
+experiment:
+    name: "cost_model_experiment"
+    base_path: "/scratch/maa9509/GNN_RL_Pretrain"
+
+data_generation:
+    ### 5 Million dataset + 1.25M validation subset
+    train_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/datasets/dataset_expr_dataset_batch550000-838143+batch101-1227605_train_part_5_of_22.pkl"
+    valid_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/datasets/LOOPer_dataset_val_1250k.pkl"
+    ## Previous 1M dataset
+    # train_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/datasets/dataset_expr_dataset_batch550000-838143+batch101-1227605_train_part_1_of_22.pkl"
+    # valid_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/datasets/LOOPer_dataset_val_250k.pkl"
+    batch_size: 512  # Larger batch size for more stable gradients
+    nb_processes: 4  # More processes for faster pickle generation
+    just_load_pickled: true   # Use existing pickles for now, will fix later
+    min_functions_per_tree_footprint: 2
+
+training:
+    log_file: "logs-gnn.txt"
+    lr: 0.0015  # Higher learning rate for better initial learning
+    max_epochs: 500
+    weight_decay: 0.001  # L2 regularization
+    training_gpu: "cuda:0" # Adjust if you want to use a different GPU
+    validation_gpu: "cuda:0"
+    continue_training: False
+    model_weights_path: "cost_model/checkpoints/best_model_gnn.pth"
+
+testing:
+    testing_model_weights_path: "cost_model/checkpoints/best_model_gnn.pth"
+    gpu: "cuda:0"
+
+wandb:
+    use_wandb: True
+    project: "release_model"
+
+model:
+    name: "ResidualGIN"   # Options: SimpleGraphSAGE, DeepGraphSAGE, SimpleGAT, SimpleGCN, ResidualGIN
+    input_size: 16    # 17D features (old_data_utils includes exec time by default) 
+    hidden_sizes:       # GNN architecture typically uses hidden layers like these
+        - 512
+        - 256
+        - 128
+    hidden_size: 256
+    gnn_layers:
+        - "GCNConv"
+        - "GATConv"
+        - "global_mean_pool"
+    drops:
+        - 0.050
+        - 0.050
+        - 0.050
+        - 0.050
+        - 0.050
+
+defaults:
+  - override hydra/job_logging: disabled

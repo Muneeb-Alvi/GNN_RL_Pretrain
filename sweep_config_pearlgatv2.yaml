@@ -1,0 +1,68 @@
+name: pearlgatv2_focused_sweep
+project: gnn_hyperparameter_sweep
+program: original_pr_files/train_model_gnn.py
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}
+  - wandb.use_wandb=true
+  - data_generation.just_load_pickled=true
+
+method: bayes
+metric:
+  name: val_loss
+  goal: minimize
+
+parameters:
+  # Only PearlGATv2
+  model.name:
+    value: "PearlGATv2"
+  
+  # Fine-tune hidden size around what likely worked (64 was default in the model)
+  model.hidden_size:
+    values: [64, 96, 128, 192, 256]
+  
+  # Very tight learning rate range around likely sweet spot
+  training.lr:
+    distribution: log_uniform_values
+    min: 0.0005
+    max: 0.003
+  
+  # Full 500 epochs
+  training.max_epochs:
+    value: 500
+  
+  # Explore batch sizes
+  data_generation.batch_size:
+    values: [256, 512, 768, 1024]
+  
+  # Fine-tune weight decay
+  training.weight_decay:
+    distribution: log_uniform_values
+    min: 0.00005
+    max: 0.005
+
+# Let models train fully - less aggressive pruning for focused search
+early_terminate:
+  type: hyperband
+  min_iter: 150
+  s: 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

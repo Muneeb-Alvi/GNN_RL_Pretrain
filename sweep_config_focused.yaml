@@ -1,0 +1,69 @@
+name: gnn_focused_sweep
+project: gnn_hyperparameter_sweep
+program: original_pr_files/train_model_gnn.py
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}
+  - wandb.use_wandb=true
+  - data_generation.just_load_pickled=true
+
+method: bayes
+metric:
+  name: val_loss
+  goal: minimize
+
+parameters:
+  # Only the top 2 models from your baseline
+  model.name:
+    values: ["PearlGATv2", "DeepResidualGAT"]
+  
+  # Focus on what worked
+  model.hidden_size:
+    values: [256, 384, 512]
+  
+  # Very tight range around likely successful LR
+  training.lr:
+    values: [0.0008, 0.001, 0.0012, 0.0015, 0.002, 0.0025]
+  
+  # Match your baseline
+  training.max_epochs:
+    value: 500
+  
+  # Around your baseline batch size
+  data_generation.batch_size:
+    values: [512, 1024]
+  
+  # Fine-tune weight decay around 0.001
+  training.weight_decay:
+    values: [0.0005, 0.001, 0.002, 0.003]
+
+# No early termination - let all runs complete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

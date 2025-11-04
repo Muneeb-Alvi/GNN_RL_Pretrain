@@ -1,0 +1,77 @@
+name: gnn_refined_sweep
+project: gnn_hyperparameter_sweep
+program: original_pr_files/train_model_gnn.py
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}
+  - wandb.use_wandb=true
+  - data_generation.just_load_pickled=true
+
+method: bayes
+metric:
+  name: val_loss
+  goal: minimize
+
+parameters:
+  # Focus on best performing models from your baseline
+  model.name:
+    values: ["PearlGATv2", "DeepResidualGAT", "SimpleGraphSAGE", "ResidualGIN"]
+  
+  # Narrower range around your successful configs
+  model.hidden_size:
+    values: [256, 384, 512]  # Removed 128, focus on larger
+  
+  # Tighter learning rate range (your baselines likely used ~0.001-0.002)
+  training.lr:
+    distribution: log_uniform_values
+    min: 0.0005
+    max: 0.005
+  
+  # Use 500 epochs like your successful baseline runs
+  training.max_epochs:
+    value: 500
+  
+  # Your baseline used 512, explore around that
+  data_generation.batch_size:
+    values: [512, 768, 1024]
+  
+  # Lower weight decay (your baseline used 0.001)
+  training.weight_decay:
+    distribution: log_uniform_values
+    min: 0.0001
+    max: 0.005
+
+# Less aggressive early termination - let models train longer
+early_terminate:
+  type: hyperband
+  min_iter: 100  # Increased from 50
+  s: 3  # Less aggressive pruning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

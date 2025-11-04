@@ -2,10 +2,10 @@ import os
 import sys
 import yaml
 
-ROOT_DIR = "/scratch/maa9509/GNN_RL_Pretrain"
+ROOT_DIR = "/scratch/maa9509/GNN_RL_Pretrain/"
 sys.path.insert(0, ROOT_DIR)
 
-from utils_gnn.data_utils import GNNDatasetParallel
+from original_pr_files.utils_gnn.data_utils import GNNDatasetParallel, get_func_repr_task_gnn
 
 
 def main():

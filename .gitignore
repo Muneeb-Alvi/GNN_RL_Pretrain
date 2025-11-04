@@ -9,3 +9,16 @@ dataset
 # *.json
 *.sh
 *.pkl
+
+*.log
+
+hpc_logs/
+small_dataset/
+gnn_pickles/
+
+wandb/
+
+outputs/
+
+original_pr_files/outputs/
+

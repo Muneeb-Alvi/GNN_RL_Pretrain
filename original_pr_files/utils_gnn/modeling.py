@@ -2,7 +2,7 @@ from unicodedata import bidirectional
 import torch
 from torch import nn
 from .data_utils import MAX_NUM_TRANSFORMATIONS, MAX_TAGS
-from torch_geometric.nn import GCNConv, GATConv, global_mean_pool
+from torch_geometric.nn import GCNConv, GATConv, global_mean_pool, global_max_pool, GATv2Conv, LayerNorm, SAGEConv  
 from torch_geometric.data import DataLoader
 from torch_geometric.data import Data
 
@@ -448,4 +448,241 @@ class ResidualGIN(nn.Module):
 
         # Head (bias ~ 1.0 => sane start for MAPE)
         out = self.head(g).squeeze(-1)            # [B]
+        return out
+
+class ResidualGATLayer(nn.Module):
+    def __init__(self, in_channels, out_channels, heads=4, dropout=0.2):
+        super().__init__()
+        self.gat = GATConv(in_channels, out_channels, heads=heads, concat=True, dropout=dropout)
+        self.linear = nn.Linear(in_channels, out_channels * heads) if in_channels != out_channels * heads else None
+        self.norm = nn.LayerNorm(out_channels * heads)
+
+    def forward(self, x, edge_index):
+        residual = x
+        x = self.gat(x, edge_index)
+        if self.linear is not None:
+            residual = self.linear(residual)
+        x = F.elu(x + residual)
+        x = self.norm(x)
+        return x
+
+class DeepResidualGAT(nn.Module):
+    def __init__(self, in_channels, hidden_channels, out_channels=1, heads=4, num_layers=4):
+        super().__init__()
+        self.layers = nn.ModuleList()
+
+        # First GAT layer
+        self.layers.append(ResidualGATLayer(in_channels, hidden_channels, heads=heads))
+
+        # Intermediate GAT layers
+        for _ in range(num_layers - 2):
+            self.layers.append(ResidualGATLayer(hidden_channels * heads, hidden_channels, heads=heads))
+
+        # Final GAT layer (optionally with 1 head)
+        self.layers.append(ResidualGATLayer(hidden_channels * heads, hidden_channels, heads=1))
+
+        # Final regression head
+        self.lin = nn.Sequential(
+            nn.Linear(hidden_channels, hidden_channels),
+            nn.ReLU(),
+            nn.Linear(hidden_channels, out_channels)
+        )
+
+    def forward(self, data):
+        x, edge_index = data.x, data.edge_index
+        batch = getattr(data, 'batch', torch.zeros(x.size(0), dtype=torch.long, device=x.device))
+
+        for layer in self.layers:
+            x = layer(x, edge_index)
+
+        x = global_mean_pool(x, batch)
+        out = self.lin(x).squeeze(dim=-1)
+        return out
+
+import numpy as np
+
+class PearlGATv2(nn.Module):
+    """
+    GATv2 model based on the pearl paper architecture.
+    - Two GATv2Conv layers with multi-head attention
+    - Global mean + max pooling (like in pearl paper)
+    - SELU activations and proper initialization
+    - Adapted for speedup prediction task
+    """
+    def __init__(
+        self,
+        in_channels: int,
+        hidden_channels: int = 64,
+        num_heads: int = 4,
+        dropout: float = 0.1,
+        out_channels: int = 1,
+    ):
+        super().__init__()
+        
+        self.dropout = nn.AlphaDropout(dropout)
+        
+        # Two GATv2Conv layers (same as pearl paper)
+        self.conv_layer1 = GATv2Conv(
+            in_channels=in_channels,
+            out_channels=hidden_channels,
+            heads=num_heads,
+        )
+        self.linear1 = nn.Linear(
+            in_features=hidden_channels * num_heads,
+            out_features=hidden_channels,
+        )
+        
+        self.conv_layer2 = GATv2Conv(
+            in_channels=hidden_channels,
+            out_channels=hidden_channels,
+            heads=num_heads,
+        )
+        self.linear2 = nn.Linear(
+            in_features=hidden_channels * num_heads,
+            out_features=hidden_channels,
+        )
+        
+        # Initialize conv layers (same as pearl paper)
+        convolutions_layers = [self.conv_layer1, self.conv_layer2]
+        for convlayer in convolutions_layers:
+            for name, param in convlayer.named_parameters():
+                if "weight" in name:
+                    nn.init.xavier_uniform_(param)
+        
+        # Initialize linear layers (same as pearl paper)
+        linear_layers = [self.linear1, self.linear2]
+        for linearlayer in linear_layers:
+            nn.init.xavier_uniform_(linearlayer.weight)
+        
+        # Convolution summarizer (combines both layers)
+        self.convs_summarizer = nn.Linear(
+            in_features=4 * hidden_channels,  # 2 layers * 2 pooling types * hidden_channels
+            out_features=hidden_channels * 2,
+        )
+        nn.init.xavier_uniform_(self.convs_summarizer.weight)
+        
+        # Shared representation layer
+        self.shared_linear1 = nn.Linear(
+            in_features=hidden_channels * 2, 
+            out_features=hidden_channels
+        )
+        nn.init.xavier_uniform_(self.shared_linear1.weight)
+        
+        # Prediction head (adapted for speedup regression)
+        self.prediction_head = nn.Sequential(
+            self._init_layer(nn.Linear(hidden_channels, hidden_channels)),
+            nn.SELU(),
+            self._init_layer(nn.Linear(hidden_channels, hidden_channels)),
+            nn.SELU(),
+            self._init_layer(nn.Linear(hidden_channels, out_channels), std=0.1),
+        )
+        
+        # Initialize final layer for speedup prediction
+        with torch.no_grad():
+            self.prediction_head[-1].bias.fill_(0.5)  # Start predicting around 1.6x speedup
+    
+    def _init_layer(self, layer, std=np.sqrt(2), bias_const=0.0):
+        """Initialize layer with orthogonal weights (same as pearl paper)."""
+        nn.init.orthogonal_(layer.weight, std)
+        nn.init.constant_(layer.bias, bias_const)
+        return layer
+    
+    def forward(self, data):
+        x, edge_index = data.x, data.edge_index
+        batch = getattr(data, "batch", None)
+        if batch is None:
+            batch = torch.zeros(x.size(0), dtype=torch.long, device=x.device)
+        
+        # First GATv2 layer
+        x = self.conv_layer1(x, edge_index)
+        x = F.selu(self.linear1(x))
+        x1 = torch.cat(
+            (global_mean_pool(x, batch), global_max_pool(x, batch)), dim=-1
+        )
+        
+        # Second GATv2 layer
+        x = self.conv_layer2(x, edge_index)
+        x = F.selu(self.linear2(x))
+        x2 = torch.cat(
+            (global_mean_pool(x, batch), global_max_pool(x, batch)), dim=-1
+        )
+        
+        # Combine both layers
+        x = torch.cat((x1, x2), dim=-1)
+        
+        # Process through summarizer and shared layers
+        x = self.convs_summarizer(x)
+        x = F.selu(self.shared_linear1(x))
+        x = self.dropout(x)
+        
+        # Final prediction
+        out = self.prediction_head(x).squeeze(-1)
+
+        return out
+
+class SimpleGraphSAGE(nn.Module):
+    def __init__(
+        self,
+        in_channels: int,
+        hidden_channels: int = 256,
+        num_layers: int = 4,
+        dropout: float = 0.2,
+        out_channels: int = 1,
+    ):
+        super().__init__()
+        
+        self.input_lin = nn.Linear(in_channels, hidden_channels)
+        
+        self.convs = nn.ModuleList()
+        self.norms = nn.ModuleList()
+        
+        for _ in range(num_layers):
+            self.convs.append(SAGEConv(hidden_channels, hidden_channels))
+            self.norms.append(LayerNorm(hidden_channels))
+            
+        self.dropout = nn.Dropout(dropout)
+        
+        # Global attention pooling layer
+        self.pool = GlobalAttention(
+            gate_nn=nn.Sequential(
+                nn.Linear(hidden_channels, hidden_channels // 2),
+                nn.ReLU(),
+                nn.Linear(hidden_channels // 2, 1)
+            )
+        )
+        
+        # Final prediction MLP
+        self.head = nn.Sequential(
+            nn.Linear(hidden_channels, hidden_channels // 2),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_channels // 2, out_channels)
+        )
+        
+        # Initialize final layer to predict ~1.0 at the start
+        nn.init.zeros_(self.head[-1].weight)
+        with torch.no_grad():
+            self.head[-1].bias.fill_(1.0)
+
+    def forward(self, data):
+        x, edge_index = data.x, data.edge_index
+        batch = getattr(data, "batch", torch.zeros(x.size(0), dtype=torch.long, device=x.device))
+        
+        # 1. Initial projection
+        x = self.input_lin(x)
+        
+        # 2. SAGE layers with residuals and normalization
+        for conv, norm in zip(self.convs, self.norms):
+            residual = x
+            x = conv(x, edge_index)
+            x = norm(x)
+            x = F.relu(x)
+            x = self.dropout(x)
+            x = x + residual # Add residual connection
+            
+        # 3. Global pooling to get a graph-level embedding
+        g = self.pool(x, batch)
+        
+        # 4. Final prediction
+        out = self.head(g).squeeze(-1)
         return out

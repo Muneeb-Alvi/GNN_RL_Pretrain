@@ -3,14 +3,14 @@ experiment:
     base_path: "/scratch/maa9509/GNN_RL_Pretrain"
 
 data_generation:
-    ### 1 Million dataset + 250k validation subset
-    train_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/small_dataset/train_data_sample_500-programs_60k-schedules.pkl"
-    valid_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/small_dataset/val_data_sample_125-programs_20k-schedules.pkl"
-    ## El kindi path
-    # train_dataset_file: "/data/mm12191/datasets/LOOPer_dataset_pickles/LOOPer_dataset_train.pkl"
-    # valid_dataset_file: "/data/mm12191/datasets/LOOPer_dataset_pickles/LOOPer_dataset_val.pkl"
+    ### 5 Million dataset + 1.25M validation subset
+    train_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/datasets/dataset_expr_dataset_batch550000-838143+batch101-1227605_train_part_5_of_22.pkl"
+    valid_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/datasets/LOOPer_dataset_val_1250k.pkl"
+    ## Previous 1M dataset
+    # train_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/datasets/dataset_expr_dataset_batch550000-838143+batch101-1227605_train_part_1_of_22.pkl"
+    # valid_dataset_file: "/scratch/maa9509/GNN_RL_Pretrain/datasets/LOOPer_dataset_val_250k.pkl"
     batch_size: 512  # Larger batch size for more stable gradients
-    nb_processes: 4
+    nb_processes: 4  # More processes for faster pickle generation
     just_load_pickled: true   # Use existing pickles for now, will fix later
     min_functions_per_tree_footprint: 2
 
@@ -18,6 +18,7 @@ training:
     log_file: "logs-gnn.txt"
     lr: 0.0015  # Higher learning rate for better initial learning
     max_epochs: 500
+    weight_decay: 0.001  # L2 regularization
     training_gpu: "cuda:0" # Adjust if you want to use a different GPU
     validation_gpu: "cuda:0"
     continue_training: False
@@ -32,8 +33,8 @@ wandb:
     project: "release_model"
 
 model:
-    name: "DeepGraphSAGE"   # Options: SimpleGraphSAGE, DeepGraphSAGE, SimpleGAT, SimpleGCN, ResidualGIN
-    input_size: 17    # 17D features (old_data_utils includes exec time by default) 
+    name: "ResidualGIN"   # Options: SimpleGraphSAGE, DeepGraphSAGE, SimpleGAT, SimpleGCN, ResidualGIN
+    input_size: 16    # 17D features (old_data_utils includes exec time by default) 
     hidden_sizes:       # GNN architecture typically uses hidden layers like these
         - 512
         - 256

@@ -1,0 +1,68 @@
+name: gnn_hyperparameter_sweep
+project: gnn_hyperparameter_sweep
+program: original_pr_files/train_model_gnn.py
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args_no_hyphens}
+  - wandb.use_wandb=true
+  - data_generation.just_load_pickled=true
+
+method: bayes
+metric:
+  name: val_loss
+  goal: minimize
+
+parameters:
+  model.name:
+    values: ["SimpleGraphSAGE", "ResidualGIN", "SimpleGAT", "SimpleGCN", "PearlGATv2"]
+  model.hidden_size:
+    values: [128, 256, 384, 512]
+  training.lr:
+    distribution: log_uniform_values
+    min: 0.0001
+    max: 0.01
+  training.max_epochs:
+    values: [200, 300, 400]
+  data_generation.batch_size:
+    values: [256, 512, 1024]
+  training.weight_decay:
+    distribution: log_uniform_values
+    min: 0.0001
+    max: 0.01
+
+early_terminate:
+  type: hyperband
+  min_iter: 50
+  s: 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

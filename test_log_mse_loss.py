@@ -47,3 +47,6 @@ print(f"\n✅ Log MSE loss function is working correctly!")
 print(f"   - Handles extreme speedup ranges")
 print(f"   - Reduces loss magnitude significantly")
 print(f"   - Should give much more stable training")
+
+
+
